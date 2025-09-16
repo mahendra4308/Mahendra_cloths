@@ -122,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("filteredProducts", JSON.stringify(filteredProducts));
         localStorage.setItem("searchQuery", query);
 
-        window.location.href = "product.html";
+        window.location.href = "Product.html";
     }
 
     // Trigger Search
