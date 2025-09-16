@@ -1,0 +1,709 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f6f9;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #222;
+            padding: 12px 20px;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-container img {
+            height: 60px;
+            border-radius: 10px;
+        }
+
+        .header-container h1 {
+            color: white;
+            font-size: 22px;
+        }
+
+        nav {
+            background: #0d3970fe;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul li {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            white-space: nowrap;
+            min-width: 50px;
+            height: 42px;
+            line-height: 30px;
+        }
+
+        nav ul li:hover {
+            background: #2dbaabfe;
+            color: yellow;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background: #0d3970fe;
+            margin-top: 10px;
+            min-width: 120px;
+            box-shadow: 0 0 5px black;
+            text-align: center;
+        }
+
+        nav ul li:hover > ul {
+            display: block;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            width: 100%;
+        }
+
+        nav ul li a:hover {
+            color: yellow;
+        }
+
+        .no2, .no3 {
+            width: 100%;
+            height: 5px;
+            background-color: white;
+            box-shadow: inset 0 0 2px black;
+            position: sticky;
+            z-index: 200;
+        }
+
+        .no2 { top: 0; }
+        .no3 { top: 47px; z-index: 300; }
+
+        .all-img {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 7px;
+            padding: 10px;
+            background-color: #e3ebe4ec;
+        }
+        
+        @media (min-width: 601px) {
+            .all-img {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+
+        .img1 {
+            background-color: white;
+            border-radius: 5px;
+            width: 100%;
+            border: 2px solid white;
+            height: 450px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .img1 img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .product-name {
+            width: 100%;
+            text-align: center;
+            font-size: 15px;
+            font-weight: bold;
+            color: black;
+            background-color: lightyellow;
+            padding: 10px 5px;
+            border-radius: 5px;
+            box-sizing: border-box;
+            white-space: pre-line;
+        }
+        
+        .product-price {
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            color: green;
+            background-color: #f8f8f8;
+            padding: 5px;
+            border-radius: 5px;
+            margin-top: -5px;
+        }
+
+        .size-container {
+            display: flex;
+            gap: 6px;
+            margin: 4px 0 8px 0;
+            justify-content: center;
+        }
+
+        .size-option {
+            position: relative;
+        }
+
+        .size-option input {
+            display: none;
+        }
+
+        .size-option span {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            border: 1.8px solid #333;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 12px;
+            user-select: none;
+            transition: 0.3s;
+        }
+
+        .size-option input:checked + span {
+            background: #0d3970fe;
+            color: #fff;
+            border-color: #333;
+        }
+
+        .buy-now {
+            background-color: #375840fe;
+            border-bottom: 3px solid #81f4e8fe;
+            color: white;
+            font-weight: bold;
+            width: 100%;
+            height: 45px;
+            line-height: 45px;
+            border-radius: 5px;
+            text-align: center;
+            cursor: pointer;
+            margin-top: auto;
+            box-sizing: border-box;
+        }
+
+        .buy-now:hover {
+            background: darkred;
+        }
+
+        .fav-btn {
+            position: absolute;
+            top: 3px;
+            right: 3px;
+            background: rgba(255, 255, 255, 0.8);
+            color: black;
+            font-size: 22px;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: 0.3s;
+            border: 1px solid gray;
+        }
+
+        .fav-btn.active {
+            background: red;
+            color: white;
+        }
+
+        h5 {
+            text-align: center;
+            color: gray;
+            padding: 20px;
+        }
+
+        .not-found {
+            text-align: center;
+            padding: 0px;
+            font-size: 20px;
+            color: #555;
+            position: absolute;
+            margin-left: 100px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="logo.png" alt="Logo">
+            <h1>Mahendra Cloth House</h1>
+        </div>
+    </header>
+
+    <div class="no2"></div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="My-order.html">My Order</a></li>
+            <li>Category ⬇
+                <ul>
+                    <li><a href="Men.html">Men</a></li>
+                    <li><a href="Women.html">Women</a></li>
+                    <li><a href="Kids.html">Kids</a></li>
+                </ul>
+            </li>
+            <li><a href="Favourite.html">Favourites</a></li>
+        </ul>
+    </nav>
+
+    <div class="no3"></div>
+
+    <h2 style="text-align:center; padding:10px; background:#0d3970fe; color:white; margin-top:10px; font-size:20px;" id="search-title">Search Results</h2>
+    <div class="all-img" id="galleryContainer"></div>
+    <h5 id="no-more">No More</h5>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const galleryContainer = document.getElementById("galleryContainer");
+        const searchTitle = document.getElementById("search-title");
+        const noMore = document.getElementById("no-more");
+
+        const filteredProducts = JSON.parse(localStorage.getItem("filteredProducts")) || [];
+        const searchQuery = localStorage.getItem("searchQuery") || "";
+        const allProducts = JSON.parse(localStorage.getItem("products")) || [];
+
+        searchTitle.textContent = `Search Results for "${searchQuery}"`;
+
+        if (filteredProducts.length === 0) {
+            galleryContainer.innerHTML = '<div class="not-found">No products found!</div>';
+            noMore.style.display = 'none';
+            return;
+        }
+
+        filteredProducts.forEach(product => {
+            const imgDiv = document.createElement("div");
+            imgDiv.className = "img1";
+
+            const favBtn = document.createElement("div");
+            favBtn.className = "fav-btn";
+            favBtn.textContent = "♡";
+
+            const img = document.createElement("img");
+            img.src = product.imgSrc;
+            img.alt = product.productName;
+
+            const nameElement = document.createElement("div");
+            nameElement.className = "product-name";
+            nameElement.textContent = product.productName;
+
+            // ✅ Product Price
+            const priceElement = document.createElement("div");
+            priceElement.className = "product-price";
+            priceElement.textContent = product.price;
+
+            // ✅ Size Container
+            const sizeContainer = document.createElement("div");
+            sizeContainer.className = "size-container";
+            if (product.sizes && product.sizes.length > 0) {
+                product.sizes.forEach((size, index) => {
+                    const label = document.createElement("label");
+                    label.className = "size-option";
+                    const input = document.createElement("input");
+                    input.type = "radio";
+                    input.name = `size-${product.productName.replace(/\s/g, '-')}`;
+                    input.value = size;
+                    if (index === 0) input.checked = true;
+                    const span = document.createElement("span");
+                    span.textContent = size;
+                    label.appendChild(input);
+                    label.appendChild(span);
+                    sizeContainer.appendChild(label);
+                });
+            }
+
+            const buyBtn = document.createElement("div");
+            buyBtn.className = "buy-now";
+            buyBtn.textContent = "Buy Now";
+
+            imgDiv.appendChild(favBtn);
+            imgDiv.appendChild(img);
+            imgDiv.appendChild(nameElement);
+            imgDiv.appendChild(priceElement); // ✅ Price Element
+            imgDiv.appendChild(sizeContainer); // ✅ Size Container
+            imgDiv.appendChild(buyBtn);
+
+            galleryContainer.appendChild(imgDiv);
+
+            imgDiv.addEventListener("click", () => {
+                openImagePage(product, allProducts, product.category);
+            });
+
+buyBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    // Selected size ले लो
+    const selectedSize = imgDiv.querySelector(".size-option input:checked")?.value || "";
+
+    // Quantity (default 1, या अगर quantity input है तो वहाँ से लो)
+    const qty = 1;
+
+    // Product object बनाओ
+    const selectedProduct = {
+        imgSrc: product.imgSrc,
+        productName: product.productName,
+        price: product.price,
+        sizes: product.sizes || [],
+        selectedSize: selectedSize,
+        quantity: qty
+    };
+
+    // localStorage में save करो
+    localStorage.setItem("selectedProduct", JSON.stringify(selectedProduct));
+
+    // Buy-now.html खोलो
+    window.location.href = "Buy-now.html";
+});
+            
+            sizeContainer.addEventListener("click", (e) => {
+                e.stopPropagation();
+            });
+
+
+            favBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                toggleFavourite(product, favBtn);
+            });
+
+            updateFavBtn(product.imgSrc, favBtn);
+        });
+    });
+
+    function openImagePage(product, allProducts, category) {
+        const newWin = window.open("", "_blank");
+        newWin.document.title = product.productName || "Image View";
+
+        newWin.document.write(`
+          <!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>${product.productName}</title>
+            <style>
+              body { margin: 0; padding: 0; font-family: Arial, sans-serif; background: #f0f0f0; }
+              .main-img-container { width: 100%; height: 400px; display:flex; justify-content:center; align-items: center; background-color:black; border-bottom: 2px solid #ccc; position: relative; }
+              .main-img { max-width: 90%; height: 350px; border-radius:5px; }
+              .product-info {
+                  text-align: center;
+                  padding: 15px;
+                  background-color: #fff;
+                  border-bottom: 1px solid #ddd;
+              }
+              .product-name-heading {
+                  font-size: 22px;
+                  font-weight: 700;
+                  color: #222;
+                  margin-bottom: 5px;
+              }
+              .product-price {
+                  font-size: 18px;
+                  color: green;
+                  font-weight: 600;
+                  margin-bottom: 10px;
+              }
+              .size-container {
+                  display: flex;
+                  justify-content: center;
+                  gap: 12px;
+                  margin-top: 8px;
+                  flex-wrap: wrap;
+              }
+              .size-option {
+                  display: inline-flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  background: #e6f6f3;
+                  border: 2px solid #cfeee6;
+                  cursor: pointer;
+                  transition: 0.2s;
+                  user-select: none;
+              }
+              .size-option span {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: 100%;
+                  height: 100%;
+                  font-weight: 700;
+                  color: #0d3970fe;
+                  border-radius: 50%;
+              }
+              .size-option input { display: none; }
+              .size-option input:checked + span {
+                  background: #0d3970fe;
+                  color: #fff;
+              }
+              .buy-now-main { background-color: #2dbaabfe; color: white; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; display: inline-block; margin-top: 10px; cursor: pointer; }
+              .buy-now-main:hover { background-color: #0d3970fe; }
+              .thumbnails-container { display: grid; gap:5px; padding: 10px; background-color:gray; }
+              .thumbnail { display: flex; flex-direction: column; justify-content: space-between; width: 100%; height: 350px; background-color: black; border: 2px solid white; border-radius: 5px; overflow: hidden; position: relative; }
+              .thumbnail img { width: 100%; height: 300px; object-fit: cover; }
+              @media (min-width: 601px) { .thumbnails-container { grid-template-columns: repeat(4, 1fr); } }
+              @media (max-width: 600px) { .thumbnails-container { grid-template-columns: repeat(2, 1fr); } }
+              nav { background: #0d3970fe; box-shadow: 0 2px 6px rgba(0,0,0,0.2); position: sticky; top: 3px; z-index: 500; }
+              nav ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: space-between; align-items: center; }
+              nav ul li  { flex: 1; text-align: center; padding: 10px; color: white; font-weight: 600; cursor: pointer; transition: 0.3s; white-space: nowrap; min-width: 50px; height: 30px; line-height: 30px; box-shadow: 0 0 5px white; }
+              nav ul li:hover { background: #2dbaabfe; color: yellow; }
+              nav ul li ul { display: none; position: absolute; background: #0d3970fe; margin-top: 10px; padding: 0; list-style: none; min-width: 120px; box-shadow: 0 0 5px black; z-index: 100; text-align: center; }
+              nav ul li ul li { padding: 10px; text-align:center; color: white; cursor: pointer; box-shadow: none; font-size: 18px; }
+              nav ul li:hover > ul { display: block; }
+              nav ul li ul li:hover { background: #2dbaabfe; color: yellow; }
+              .no { width: 100%; height: 6px; background-color: white; box-shadow:inset 0 0 4px black; position:sticky; top:50px; z-index:50;}
+              .no1{ width: 100%; height: 6px; background-color: white; box-shadow:inset 0 0 4px black; position:sticky; top:0; z-index:100;}
+              .buy-now { background-color: #375840fe; border-bottom: 3px solid #81f4e8fe; color: white; font-weight: bold; padding: 8px; width: 90%; line-height: 30px; border-radius: 5px; text-align: center; cursor: pointer; align-self: center; }
+              .buy-now:hover { background: darkred; }
+              h5{ text-align: center; color: gray; }
+              .fav-btn { position: absolute; top: 3px; right: 3px; background: rgba(255,255,255,0.8); color: black; font-size: 18px; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 10; transition: 0.3s; border: 1px solid gray; }
+              .fav-btn.active { background: red; color: white; }
+              nav ul li a { text-decoration: none; color: white; display: block; height: 100%; width: 100%; }
+              nav ul li a:hover { color: yellow; }
+              .product-name{ white-space: pre-line; font-size:20px; }
+            </style>
+          </head>
+          <body>
+            <div class="no1"></div>
+            <nav>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="My-order.html">My Order</a></li>
+                <li>Category ⬇
+                  <ul>
+                    <li><a href="Men.html">Men</a></li>
+                    <li><a href="Women.html">Women</a></li>
+                    <li><a href="Kids.html">Kids</a></li>
+                  </ul>
+                </li>
+                <li><a href="Favourite.html">Favourites</a></li>
+              </ul>
+            </nav>    
+            <div class="no"></div>
+            <div class="main-img-container">
+              <div class="fav-btn" id="mainFavBtn">♡</div> <img id="mainImage" class="main-img" src="${product.imgSrc}" alt="${product.productName}">
+            </div>
+            <div class="product-info">
+                <div id="mainProductName" class="product-name-heading">${product.productName}</div>
+                <div id="mainProductPrice" class="product-price">${product.price}</div>
+                <div id="mainProductSizes" class="size-container"></div>
+                <div style="margin-top:10px;"><button id="buyMainBtn" class="buy-now-main">Buy Now</button></div>
+            </div>
+            <div class="thumbnails-container" id="thumbnailsContainer"></div>
+            <h5>No More</h5>
+            <script>
+              const allProducts = JSON.parse(localStorage.getItem("products")) || [];
+              const categoryProducts = allProducts.filter(p => p.category === "${product.category}");
+              let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+
+              function toggleFavourite(prod) {
+                const isFavourite = favourites.some(fav => fav.imgSrc === prod.imgSrc);
+                if (isFavourite) {
+                  favourites = favourites.filter(fav => fav.imgSrc !== prod.imgSrc);
+                } else {
+                  favourites.push(prod);
+                }
+                localStorage.setItem("favourites", JSON.stringify(favourites));
+                updateMainFavBtn();
+              }
+
+              function updateMainFavBtn() {
+                const mainFavBtn = document.getElementById("mainFavBtn");
+                const mainImageSrc = document.getElementById("mainImage").src;
+                const isFavourite = favourites.some(fav => fav.imgSrc === mainImageSrc);
+                if (isFavourite) {
+                  mainFavBtn.classList.add("active");
+                  mainFavBtn.textContent = "♥";
+                } else {
+                  mainFavBtn.classList.remove("active");
+                  mainFavBtn.textContent = "♡";
+                }
+              }
+              
+              function getRandomProducts(currentProduct, count) {
+                const filteredProducts = categoryProducts.filter(p => p.imgSrc !== currentProduct.imgSrc);
+                const shuffledProducts = filteredProducts.sort(() => 0.5 - Math.random());
+                return shuffledProducts.slice(0, count);
+              }
+              
+              function renderMain(prod) {
+                const mainImage = document.getElementById("mainImage");
+                const mainProductName = document.getElementById("mainProductName");
+                const mainProductPrice = document.getElementById("mainProductPrice");
+                const mainProductSizes = document.getElementById("mainProductSizes");
+                
+                mainImage.src = prod.imgSrc;
+                mainProductName.textContent = prod.productName;
+                mainProductPrice.textContent = prod.price;
+                
+                // Render sizes
+                mainProductSizes.innerHTML = '';
+                if (prod.sizes && prod.sizes.length > 0) {
+                    prod.sizes.forEach((size, index) => {
+                        const label = document.createElement("label");
+                        label.className = "size-option";
+                        const input = document.createElement("input");
+                        input.type = "radio";
+                        input.name = "size-main-product";
+                        input.value = size;
+                        if (index === 0) input.checked = true;
+                        const span = document.createElement("span");
+                        span.textContent = size;
+                        label.appendChild(input);
+                        label.appendChild(span);
+                        mainProductSizes.appendChild(label);
+                    });
+                }
+                updateMainFavBtn();
+              }
+              
+              function renderThumbnails(currentProduct) {
+                const randomThumbs = getRandomProducts(currentProduct, 4);
+                const thumbnailsContainer = document.getElementById("thumbnailsContainer");
+                thumbnailsContainer.innerHTML = '';
+
+                randomThumbs.forEach(prod => {
+                  const div = document.createElement("div");
+                  div.className = "thumbnail";
+                  
+                  const img = document.createElement("img");
+                  img.src = prod.imgSrc;
+
+                  const buyBtn = document.createElement("div");
+                  buyBtn.className = "buy-now";
+                  buyBtn.textContent = "Buy Now";
+
+                  img.addEventListener("click", () => {
+                    renderMain(prod);
+                    renderThumbnails(prod);
+                    window.scrollTo(0, 0);
+                  });
+
+                  buyBtn.addEventListener("click", (e) => {
+                    e.stopPropagation();
+                    alert("Buying: " + prod.productName);
+                  });
+
+                  div.appendChild(img);
+                  div.appendChild(buyBtn);
+                  thumbnailsContainer.appendChild(div);
+                });
+              }
+              
+              const initialProduct = allProducts.find(p => p.imgSrc === "${product.imgSrc}");
+              
+              document.getElementById("mainFavBtn").addEventListener("click", () => {
+                const mainImageSrc = document.getElementById("mainImage").src;
+                const currentProduct = categoryProducts.find(p => p.imgSrc === mainImageSrc);
+                if (currentProduct) {
+                  toggleFavourite(currentProduct);
+                }
+              });
+document.getElementById("buyMainBtn").addEventListener("click", () => {
+  // Selected size
+  const selectedSize = Array.from(document.querySelectorAll('.size-option input'))
+    .find(input => input.checked)?.value || "";
+
+  // Quantity default 1 (अगर quantity feature add करना है तो यहाँ input ले सकते हो)
+  const qty = 1;
+
+  // Product data बनाओ
+  const product = {
+    imgSrc: document.getElementById("mainImage").src,
+    productName: document.getElementById("mainProductName").textContent || "Product",
+    price: document.getElementById("mainProductPrice").textContent || "₹0",
+    sizes: Array.from(document.querySelectorAll(".size-option span")).map(s => s.textContent),
+    selectedSize: selectedSize,
+    quantity: qty
+  };
+
+  // Save in localStorage
+  localStorage.setItem("selectedProduct", JSON.stringify(product));
+
+  // Open Buy-now.html
+  window.location.href = "Buy-now.html";
+});
+              
+              renderMain(initialProduct);
+              renderThumbnails(initialProduct);
+            <\/script>
+          </body>
+          </html>
+        `);
+        newWin.document.close();
+    }
+    
+    // Toggle favourite function
+    function toggleFavourite(product, favBtn) {
+        let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+        const isFavourite = favourites.some(fav => fav.imgSrc === product.imgSrc);
+        if (isFavourite) {
+            favourites = favourites.filter(fav => fav.imgSrc !== product.imgSrc);
+        } else {
+            favourites.push(product);
+        }
+        localStorage.setItem("favourites", JSON.stringify(favourites));
+        updateFavBtn(product.imgSrc, favBtn);
+    }
+
+    // Update favorite button state
+    function updateFavBtn(imgSrc, favBtn) {
+        let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+        const isFavourite = favourites.some(fav => fav.imgSrc === imgSrc);
+        if (isFavourite) {
+            favBtn.classList.add("active");
+            favBtn.textContent = "♥";
+        } else {
+            favBtn.classList.remove("active");
+            favBtn.textContent = "♡";
+        }
+    }
+</script>
+
+</body>
+</html>

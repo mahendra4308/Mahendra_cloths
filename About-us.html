@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Mahendra Cloth House</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+  line-height: 1.7;
+}
+
+/* Header */
+header {
+  background: #222;
+  padding: 12px 20px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.header-container img {
+  height: 60px;
+  width: auto;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.header-container h1 {
+  color: white;
+  font-size: 28px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
+  margin: 0;
+}
+
+/* Hero Section */
+.hero {
+  background: url('clothing-line.jpg') no-repeat center center;
+  background-size: cover;
+  color: white;
+  text-align: center;
+  padding: 200px 20px;
+  position: relative;
+  min-height: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero h1, .hero p {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: 50px;
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+.hero p {
+  font-size: 22px;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+}
+
+/* About Section */
+.about-section {
+  max-width: 1000px;
+  margin: 50px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.about-section h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 25px;
+  color: #2c3e50;
+}
+
+.about-section p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: justify;
+}
+
+.highlight {
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+/* Products Grid */
+.products {
+  margin-top: 50px;
+}
+
+.products h3 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 26px;
+  color: #2c3e50;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-item {
+  background: #fff;
+  padding: 22px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.product-item:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  background: #fef7f7;
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+/* Additional Text Section */
+.extra-info {
+  max-width: 900px;
+  margin: 50px auto;
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+}
+
+.extra-info h3 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.extra-info p {
+  font-size: 17px;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+/* Founder Section */
+.team {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.member {
+  background: #fff;
+  display: inline-block;
+  padding: 20px;
+  border-radius: 50px;
+  max-width: 300px;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.member img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid #e74c3c;
+  animation: color 4s linear infinite;
+}
+@keyframes color{
+  0%{  border: 3px solid #e74c3c; box-shadow:0 0 12px #e74c3c ;}
+  50%{  border: 3px solid blue; box-shadow:0 0 15px blue;}
+    70%{  border: 3px solid purple;}
+    100%{  border: 3px solid green; box-shadow:0 0 10px green;}
+}
+
+.member h4 {
+  margin: 10px 0 5px;
+  color: #2c3e50;
+}
+
+.member p {
+  margin: 0;
+  color: #777;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin-top: 50px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 40px; }
+  .hero p { font-size: 20px; }
+  .header-container img { height: 50px; }
+  .header-container h1 { font-size: 26px; }
+  .about-section { padding: 25px; }
+  .about-section p { font-size: 16px; }
+  .product-item { font-size: 15px; padding: 18px; }
+  .extra-info { padding: 25px; }
+}
+
+@media (max-width: 480px) {
+  .hero { padding: 100px 15px; }
+  .hero h1 { font-size: 28px; }
+  .hero p { font-size: 16px; }
+  .header-container { justify-content: center; }
+  .header-container img { height: 45px; }
+  .header-container h1 { font-size: 22px; }
+  .about-section h2 { font-size: 24px; }
+  .about-section p { font-size: 15px; }
+  .product-item { font-size: 14px; padding: 15px; }
+  .extra-info h3 { font-size: 22px; }
+  .extra-info p { font-size: 14px; }
+}
+
+/* About Us Additional Styles */
+
+/* Mission & Vision */
+.mission-vision {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.mission-vision .box {
+  flex: 1;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  min-width: 250px;
+}
+
+.mission-vision .box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.mission-vision h3 {
+  margin-bottom: 10px;
+  color: #e74c3c;
+}
+
+/* USP / Special Points */
+.usp-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.usp-item {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+  flex: 1 1 200px;
+  text-align: center;
+}
+
+.usp-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+  background: #f0f0f0;
+}
+
+/* General About Section */
+.about-section h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+nav {
+  background: #0d3970fe;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 5px;
+  z-index: 50;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between; /* बराबर फैल जाएंगे */
+  align-items: center;
+  
+}
+
+nav ul li {
+  flex: 1;                 /* हर item बराबर space ले */
+  text-align: center;      /* बीच में text */
+  padding: 10px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  white-space: nowrap;     
+  min-width: 50px;         
+  height: 42px;
+  line-height: 30px;
+  box-shadow: 0 0 5px white;
+  
+}
+
+nav ul li:hover {
+  background: #2dbaabfe;
+  color: yellow;
+}
+
+/* Mobile responsive */
+@media (max-width: 600px) {
+  nav ul li {
+    padding: 8px;
+    font-size: 14px;   /* अपने आप छोटा हो जाएगा */
+  }
+}
+
+/* Dropdown छुपाना */
+nav ul li ul {
+  display: none;
+  position: absolute;  
+  background: #0d3970fe;
+  margin-top: 10px;
+  padding: 0;
+  list-style: none;
+  min-width: 120px;
+  box-shadow: 0 0 5px black;
+  z-index: 100;
+  text-align: center;
+}
+
+/* Dropdown के अंदर li */
+nav ul li ul li {
+  padding: 10px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  box-shadow: none;
+  font-size: 18px;
+  
+}
+
+/* Hover पर दिखे */
+nav ul li:hover > ul {
+  display: block;
+}
+
+/* Dropdown hover effect */
+nav ul li ul li:hover {
+  background: #2dbaabfe;
+  color: yellow;
+}
+
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+nav ul li a:hover {
+  color: yellow;
+}
+  .no2{
+width: 100%;
+height: 5px;
+background-color: white;
+box-shadow:inset 0 0 2px black;  
+position: sticky;
+top: 0;
+z-index: 200;
+
+}
+ .no3{
+width: 100%;
+height: 5px;
+background-color: white;
+box-shadow:inset 0 0 2px black;  
+position: sticky;
+top: 46px;
+z-index: 300;
+}
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="header-container">
+    <img src="logo.png" alt="Logo">
+    <h1>Mahendra Cloth House</h1>
+  </div>
+</header>
+<div class="no2"></div>
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="My-order.html">My Order</li>
+    <li>Category ⬇
+    <ul>
+    
+      
+    <li><a href="Men.html">Man</a></li>
+      <li><a href="Women.html">Women</a></li>
+      <li><a href="Kids.html">Kids</a></li>
+    </ul>
+    </li>
+   
+    <li> <a href="Favourite.html">Favourites</a></li>
+    
+  </ul>
+</nav>  
+  <div class="no3"></div>
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Welcome to Mahendra Cloth House</h1>
+  <p>Style • Comfort • Quality – सब कुछ एक जगह</p>
+</section>
+
+<!-- About Section -->
+<div class="about-section">
+  <h2>About Us</h2>
+  <p>
+    <span class="highlight">Mahendra Cloth House</span> में आपका स्वागत है।  
+    हम फैशन और क्वालिटी को एक नया आयाम देते हैं।  
+    हमारे पास <b>Men, Women और Kids</b> के लिए ट्रेंडी और आरामदायक कपड़े हैं।  
+  </p>
+  <p>
+    हमारा उद्देश्य हर ग्राहक तक <b>बेहतरीन स्टाइलिश, आरामदायक और किफायती कपड़े</b> पहुँचाना है।  
+    हम चाहते हैं कि आप फैशन के साथ-साथ आराम और आत्मविश्वास महसूस करें।
+  </p>
+</div>
+
+<!-- Products Section -->
+<div class="products">
+  <h3>Our Collections</h3>
+  <div class="product-list">
+    <div class="product-item">Men’s Shirts</div>
+    <div class="product-item">T-Shirts</div>
+    <div class="product-item">Jeans & Lowers</div>
+    <div class="product-item">Kids Wear</div>
+    <div class="product-item">Sarees</div>
+    <div class="product-item">Ladies Suits</div>
+    <div class="product-item">Winter Collection</div>
+    <div class="product-item">Casual & Formal Wear</div>
+    <div class="product-item">Accessories</div>
+    <div class="product-item">And Much More...</div>
+  </div>
+</div>
+
+<!-- Extra Text Section -->
+<div class="extra-info">
+  <h3>Why Choose Us?</h3>
+  <p>हमारे सभी कपड़े उच्च गुणवत्ता वाले फैब्रिक से बने होते हैं, जिससे आपको आराम और लंबी उम्र दोनों मिलती हैं।</p>
+  <p>हमारे कस्टमर सर्विस टीम हमेशा तैयार रहती है ताकि आपके हर सवाल और ऑर्डर का सही समाधान हो।</p>
+  <p>हम हर सीजन में नई और ट्रेंडी कलेक्शन पेश करते हैं, ताकि आप फैशन में हमेशा आगे रहें।</p>
+</div>
+
+<!-- Founder Se<!-- Additional Sections for About Us -->
+
+<!-- Mission & Vision -->
+<div class="about-section">
+  <h2>Our Mission & Vision</h2>
+  <div class="mission-vision">
+    <div class="box">
+      <h3>Our Mission</h3>
+      <p>हर ग्राहक को <b>स्टाइलिश, comfortable और affordable कपड़े</b> देना।</p>
+    </div>
+    <div class="box">
+      <h3>Our Vision</h3>
+      <p>Fashion को हर घर तक पहुँचाना और ग्राहकों को खुश करना।</p>
+    </div>
+  </div>
+</div>
+
+<!-- Company History -->
+<div class="about-section">
+  <h2>Our Journey</h2>
+  <p>Mahendra Cloth House पिछले <b>20 सालों</b> से फैशन और क्वालिटी में उत्कृष्टता प्रदान कर रहा है।  
+     हमारी टीम हर समय नए डिज़ाइन और बेहतरीन कपड़े लाने में लगी रहती है।  
+     हम चाहते हैं कि हर ग्राहक अपने कपड़ों के साथ आत्मविश्वास और आराम महसूस करे।</p>
+</div>
+
+<!-- USP / Special Points -->
+<div class="about-section">
+  <h2>Why Choose Us?</h2>
+  <div class="usp-grid">
+    <div class="usp-item">✅ Trendy Designs</div>
+    <div class="usp-item">✅ High Quality Fabric</div>
+    <div class="usp-item">✅ Affordable Prices</div>
+    <div class="usp-item">✅ Customer Satisfaction</div>
+    <div class="usp-item">✅ Quick Delivery</div>
+  </div>
+</div>
+<div class="team">
+  <h3>Meet Our Founder</h3>
+  <div class="member">
+    <img src="IMG_20250825_132533.jpg" alt="Founder Photo">
+    <h4>Mahendra Pratap</h4>
+    <p>Owner & Founder</p>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2025 Mahendra Cloth House. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>

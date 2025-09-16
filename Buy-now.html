@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahendra Cloth House</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    body {
+      background: #f0f2f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ===== Header ===== */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: black;
+      padding: 12px 24px;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    header .logo img {
+      height: 48px;
+      width: 48px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+    }
+
+    header h1 {
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    /* ===== Navigation ===== */
+    nav {
+      background: #0d3970fe;
+      padding: 8px;
+      
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      justify-content: center;
+      height: 40px;
+      line-height:40px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: 4px;
+      transition: 0.3s;
+      border-right: 1px solid white;
+      border-left: 1px solid white;
+    }
+
+    nav ul li a:hover {
+      background: #fff;
+      color: #222;
+      height: 40px;
+      line-height:40px;
+    }
+
+    /* ===== Container ===== */
+    .container {
+      max-width: 1100px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+    }
+
+    /* Product Section */
+    .product-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 25px;
+      margin-bottom: 25px;
+    }
+
+    .product-section img {
+      width: 300px;
+      height: 360px;
+      border-radius: 12px;
+      border: 1px solid #ddd;
+      object-fit: cover;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    }
+
+    .product-details {
+      flex: 1;
+      min-width: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .product-details h2 {
+      font-size: 26px;
+      margin-bottom: 12px;
+      color: #222;
+    }
+
+    .price {
+      font-size: 22px;
+      color: #27ae60;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .free-delivery {
+      color: #e67e22;
+      font-size: 16px;
+      margin-bottom: 20px;
+      font-weight: 600;
+      
+    }
+
+    .product-details .form-group {
+      max-width: 150px;
+    }
+
+    /* ===== Form Section ===== */
+    .form-section h3 {
+      margin-bottom: 20px;
+      font-size: 22px;
+      font-weight: 600;
+      color: #0d3970fe;
+      border-left: 5px solid #27ae60;
+      padding-left: 12px;
+      font-weight: bold;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 14px;
+      color: black;
+      font-weight: bold;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: 0.3s;
+      background: #fafafa;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #27ae60;
+      background: #fff;
+      box-shadow: 0 0 6px rgba(39, 174, 96, 0.3);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    /* ===== Button ===== */
+    .btn {
+      width: 100%;
+      padding: 14px;
+      background-color: #0d3970fe;
+      border: none;
+      border-radius: 10px;
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .product-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      
+      .product-details {
+        align-items: center;
+      }
+    }
+    
+
+
+
+
+
+/* अगर पहले कहीं .product-details .form-group { max-width:150px } है तो override कर दें */
+.product-details .form-group.quantity-row {
+  max-width: none;
+  width: auto;
+}
+
+/* row layout */
+.form-group.quantity-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+}
+
+/* label */
+.form-group.quantity-row label {
+  margin: 0;
+  white-space: nowrap;
+  font-weight: 600;
+  font-size: 15px;
+  margin-top: 50px;
+}
+
+/* quantity box */
+.quantity-box {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fafafa;
+  box-sizing: border-box;
+  margin-bottom: 40px;
+  margin-left: 90px;
+}
+
+/* buttons — SAME width & height */
+.qty-btn {
+  width: 44px;        /* fix width */
+  height: 44px;       /* fix height */
+  min-width: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;         /* important to force fixed size */
+  border: none;
+  background: #0d3970fe;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* number input — same height as buttons */
+.quantity-box input {
+  width: 58px;
+  height: 44px;
+  
+  padding: 0;
+  border: none;
+  text-align: center;
+  font-size: 16px;
+  background: transparent;
+  box-sizing: border-box;
+}
+
+/* small polish */
+.qty-btn:focus { outline: none; }
+.qty-btn:hover { filter: brightness(0.95); }
+
+
+.dropdown {
+  position: relative;
+  width: 80%;
+}
+
+
+#dropdownInput {
+  width: 50%;
+  padding: 10px;
+  border: 2px solid #009688;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  background: #fff;
+  margin-bottom: 20px;
+  margin-left: 90px;
+}
+
+#dropdownInput:focus {
+  outline: none;
+  border-color: #00796b;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  right: 0;
+  width: 50%;
+  font-weight: bold;
+  background: #e8fdef;
+  border: 2px solid #0d3970fe;
+  border-top: none;
+  max-height: 400px;     /* fix height */
+  overflow-y: auto;      /* scrollbar enable */
+  margin-left: 90px;
+  display: none;         /* default hidden */
+  z-index: 1000;
+  border-radius: 0 0 6px 6px;
+}
+
+/* scrollbar style */
+.dropdown-list::-webkit-scrollbar {
+  width: 6px;
+}
+.dropdown-list::-webkit-scrollbar-thumb {
+  background: #0d3970fe;
+  border-radius: 4px;
+}
+.dropdown-list::-webkit-scrollbar-track {
+  background: #e0f2f1;
+}
+
+.dropdown-item {
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.dropdown-item:hover {
+  background: #009688;
+  color: white;
+}
+.size-text, .qty-text{
+  margin-top: 10px;
+  position: absolute;
+  font-weight: bold;
+}
+#total-price{
+  
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+#total{
+  display: inline-block;
+  color: green;
+  padding: 10px;
+  font-size: 20px;
+}
+
+
+
+
+
+  /* Success & Error message box */
+  .message-box {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 300px;
+    max-width: 90%;
+    padding: 20px 25px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    display: none;
+    z-index: 9999;
+  }
+
+  .message-success {
+    background:#0d3970fe; 
+    color: white;
+    font-weight: bold;
+    height: 150px;/* green */
+    line-height:100px;
+    box-shadow: 0 0px 20px green;
+  }
+
+  .message-error {
+    background: #f53744; 
+    font-weight: bold;/* red */
+  }
+
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+      <h1>Mahendra Cloth House</h1>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="About-us.html">About Us</a></li>
+
+      <li><a href="Contact-us.html">Contact Us</a></li>
+      <li><a href="My-order.html">My Orders</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- Container -->
+  <div class="container">
+
+    <div class="product-section">
+      <img id="mainImg" alt="product">
+      <div class="product-details">
+        <h2 id="product-name">Men's Stylish T-Shirt</h2>
+        <p class="price">₹</p>
+
+      </div>
+    </div>
+    
+    
+  
+    
+    
+
+<div class="dropdown">
+  <div class="size-text">Size</div>
+<input type="text" id="dropdownInput" placeholder="Select size  ⬇️" readonly>
+<div class="dropdown-list" id="dropdownList">
+    <div class="dropdown-item">1Y-2Y</div>
+    <div class="dropdown-item">3Y-5Y</div>
+    <div class="dropdown-item">6Y-8Y</div>
+    <div class="dropdown-item">9Y-11Y</div>
+    <div class="dropdown-item">12Y-14Y</div>
+    <div class="dropdown-item">S</div>
+    <div class="dropdown-item">M</div>
+    <div class="dropdown-item">L</div>
+    <div class="dropdown-item">XL</div>
+    <div class="dropdown-item">XXL</div>
+    <div class="dropdown-item">XXXL</div>
+  </div>
+</div>
+
+        
+     <div class="qty-text">Quantity</div>
+<div class="form-group quantity-row">
+  
+  <div class="quantity-box">
+    <button type="button" class="qty-btn" onclick="changeQty(-1)">-</button>
+    <input type="text" id="qty" value="1" readonly>
+    <button type="button" class="qty-btn" onclick="changeQty(1)">+</button>
+  </div>
+</div>   
+    <div id="total-price">Total Price : ₹<div id="total"></div> </div>
+   <p class="free-delivery">Cash on Delivery<br><br>Free Delivery</p>
+      <!-- Customer Form -->
+    <div class="form-section">
+      <h3>Customer Details</h3>
+      <hr><br>
+      <div class="form-group">
+
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your name">
+      </div>
+
+      <div class="form-group">
+        <label for="mobile">Mobile Number</label>
+        <input type="tel" id="mobile" placeholder="Enter mobile number">
+      </div>
+
+      <div class="form-group">
+        <label for="state">State</label>
+        <input type="text" id="state" placeholder="Enter your state">
+      </div>
+
+      <div class="form-group">
+        <label for="district">District</label>
+        <input type="text" id="district" placeholder="Enter your district">
+      </div>
+
+      <div class="form-group">
+        <label for="post">Post</label>
+        <input type="text" id="post" placeholder="Enter your post">
+      </div>
+
+      <div class="form-group">
+        <label for="pincode">Pin Code</label>
+        <input type="number" id="pincode" placeholder="Enter your pin code">
+      </div>
+
+      <div class="form-group">
+        <label for="house">House Number</label>
+        <input type="text" id="house" placeholder="Enter house number">
+      </div>
+
+      <div class="form-group">
+        <label for="address">Address Line (Optional)</label>
+        <textarea id="address" placeholder="Street / Landmark"></textarea>
+      </div>
+
+      <button class="btn">Buy Now</button>
+    </div>
+  </div>
+
+<div id="msgBox" class="message-box"></div>
+
+<script>
+const input = document.getElementById("dropdownInput");
+const list = document.getElementById("dropdownList");
+
+// dropdown toggle
+input.addEventListener("click", () => {
+  list.style.display = list.style.display === "block" ? "none" : "block";
+});
+
+// close dropdown if clicked outside
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".dropdown")) {
+    list.style.display = "none";
+  }
+});
+
+// Quantity change function
+function changeQty(value) {
+  const qtyInput = document.getElementById("qty");
+  let current = parseInt(qtyInput.value) || 1;
+  current += value;
+  if (current < 1) current = 1;
+  qtyInput.value = current;
+  updateTotalPrice();
+}
+
+// Total price calculation
+function updateTotalPrice() {
+  const qty = parseInt(document.getElementById("qty").value) || 1;
+  const priceText = document.querySelector(".product-details .price").textContent;
+  const priceNumber = parseInt(priceText.replace(/[^0-9]/g, "")) || 0;
+  const totalEl = document.getElementById("total");
+  if (totalEl) totalEl.textContent = priceNumber * qty;
+}
+
+// Initialize product data on page load
+window.addEventListener("DOMContentLoaded", () => {
+  const productData = JSON.parse(localStorage.getItem("selectedProduct"));
+  if (!productData) return;
+
+  const imgEl = document.querySelector(".product-section img");
+  if (imgEl && productData.imgSrc) imgEl.src = productData.imgSrc;
+
+  const nameEl = document.querySelector(".product-details h2");
+  if (nameEl) nameEl.textContent = productData.productName || "Product Name";
+
+  const priceEl = document.querySelector(".product-details .price");
+  if (priceEl) priceEl.textContent = productData.price || "₹0";
+
+  updateTotalPrice();
+
+  const dropdownInput = document.getElementById("dropdownInput");
+  const dropdownList = document.getElementById("dropdownList");
+  if (dropdownInput && Array.isArray(productData.sizes)) {
+    dropdownInput.value = productData.selectedSize || productData.sizes[0];
+    dropdownList.innerHTML = "";
+
+    productData.sizes.forEach(size => {
+      const div = document.createElement("div");
+      div.className = "dropdown-item";
+      div.textContent = size;
+      div.addEventListener("click", () => {
+        dropdownInput.value = size;
+        dropdownList.style.display = "none";
+      });
+      dropdownList.appendChild(div);
+    });
+  }
+});
+
+// ====== MESSAGE BOX ======
+function showMessage(text, type = "success") {
+  const box = document.getElementById("msgBox");
+  box.textContent = text;
+  box.className = "message-box " + (type === "error" ? "message-error" : "message-success");
+  box.style.display = "block";
+  setTimeout(() => { box.style.display = "none"; }, 3000);
+}
+
+// ====== ORDER SAVE SYSTEM ======
+function saveOrder() {
+  const productData = JSON.parse(localStorage.getItem("selectedProduct")) || {};
+
+  const order = {
+    imgSrc: document.getElementById("mainImg")?.src || productData.imgSrc || "",
+    productName: document.getElementById("product-name")?.textContent || productData.productName || "Product",
+    price: (document.querySelector(".price")?.textContent || productData.price || "₹0").replace(/[^0-9]/g, ""),
+    size: document.getElementById("dropdownInput")?.value || "",
+    quantity: document.getElementById("qty")?.value || "1",
+    total: document.getElementById("total")?.textContent || "",
+    customer: {
+      name: document.getElementById("name")?.value || "",
+      mobile: document.getElementById("mobile")?.value || "",
+      state: document.getElementById("state")?.value || "",
+      district: document.getElementById("district")?.value || "",
+      post: document.getElementById("post")?.value || "",
+      pincode: document.getElementById("pincode")?.value || "",
+      house: document.getElementById("house")?.value || "",
+      address: document.getElementById("address")?.value || ""
+    }
+  };
+
+  const orders = JSON.parse(localStorage.getItem("orders")) || [];
+  orders.push(order);
+  localStorage.setItem("orders", JSON.stringify(orders));
+  return order;
+}
+
+// ====== SEND TO WHATSAPP ======
+function sendToWhatsApp(order) {
+  const phoneNumber = "919838881619"; // आपका नंबर
+  let message = `🛒 New Order Received\n\n`;
+  message += `📌 Product: ${order.productName}\n`;
+  message += `🖼️ Image: ${order.imgSrc}\n`;
+  message += `📏 Size: ${order.size}\n`;
+  message += `🔢 Quantity: ${order.quantity}\n`;
+  message += `💰 Price: ₹${order.price}\n`;
+  message += `💵 Total: ₹${order.total}\n\n`;
+  message += `👤 Customer Details:\n`;
+  message += `Name: ${order.customer.name}\n`;
+  message += `Mobile: ${order.customer.mobile}\n`;
+  message += `State: ${order.customer.state}\n`;
+  message += `District: ${order.customer.district}\n`;
+  message += `Post: ${order.customer.post}\n`;
+  message += `Pincode: ${order.customer.pincode}\n`;
+  message += `House: ${order.customer.house}\n`;
+  message += `Address: ${order.customer.address}`;
+
+  const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+  window.open(url, "_blank");
+}
+
+// ====== BUY NOW BUTTON (FINAL) ======
+document.querySelector(".btn").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name");
+  const mobile = document.getElementById("mobile");
+  const state = document.getElementById("state");
+  const district = document.getElementById("district");
+  const post = document.getElementById("post");
+  const pincode = document.getElementById("pincode");
+  const house = document.getElementById("house");
+
+  document.querySelectorAll("input, textarea").forEach(el => el.classList.remove("error"));
+
+  if (name.value.trim() === "") { showMessage("❌ Please enter your full name", "error"); name.classList.add("error"); name.focus(); return; }
+  if (!/^\d{10}$/.test(mobile.value)) { showMessage("❌ Enter valid 10-digit mobile number", "error"); mobile.classList.add("error"); mobile.focus(); return; }
+  if (state.value.trim() === "") { showMessage("❌ Please enter your state", "error"); state.classList.add("error"); state.focus(); return; }
+  if (district.value.trim() === "") { showMessage("❌ Please enter your district", "error"); district.classList.add("error"); district.focus(); return; }
+  if (post.value.trim() === "") { showMessage("❌ Please enter your post", "error"); post.classList.add("error"); post.focus(); return; }
+  if (!/^\d{6}$/.test(pincode.value)) { showMessage("❌ Enter valid 6-digit pin code", "error"); pincode.classList.add("error"); pincode.focus(); return; }
+  if (house.value.trim() === "") { showMessage("❌ Please enter your house number", "error"); house.classList.add("error"); house.focus(); return; }
+
+  // ✅ Validation pass
+  const order = saveOrder();
+  sendToWhatsApp(order);
+
+  // Reset form
+  document.querySelectorAll("input, textarea").forEach(el => el.value = "");
+  document.getElementById("qty").value = "1";
+  document.getElementById("total").textContent = "0";
+  document.getElementById("dropdownInput").value = "";
+
+  showMessage("✅ Order placed successfully!", "success");
+});
+</script>
+
+
+</body>
+</html>
+
+
+

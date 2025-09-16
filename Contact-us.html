@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Title -->
+  <title>Mahendra Cloth House - Sitapur Kamlapur</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Mahendra Cloth House - Sitapur Kamlapur में कपड़ों का बेहतरीन कलेक्शन। Men, Women और Kids के लिए नए फैशन उपलब्ध।">
+  <meta name="keywords" content="Cloth Shop Sitapur, कपड़े Sitapur, Mahendra Cloth House, Kamlapur कपड़े, कपड़ों की दुकान Sitapur">
+  <meta name="author" content="Mahendra Cloth House">
+
+  <!-- Social Media Preview (Open Graph) -->
+  <meta property="og:title" content="Mahendra Cloth House - Sitapur Kamlapur">
+  <meta property="og:description" content="Sitapur Kamlapur में फैशनेबल कपड़ों की दुकान - Men, Women और Kids के लिए नया कलेक्शन।">
+  <meta property="og:type" content="website">
+  
+  <meta property="og:image" content="logo.png">
+
+  <!-- Favicon (छोटा icon जो browser tab में दिखता है) -->
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/892/892458.png">
+
+  
+  
+  
+  
+  
+  
+  
+  
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Mahendra Cloth House</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+  line-height: 1.7;
+}
+
+/* Header */
+header {
+  background: #222;
+  padding: 12px 20px;
+}
+
+.header-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: nowrap;
+  overflow: hidden;
+}
+
+.header-container img {
+  height: 60px;
+  width: auto;
+  border-radius: 10px;
+
+}
+
+.header-container h1 {
+  color: white;
+  font-size: 23px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-shrink: 1;
+  margin: 0;
+}
+
+/* Sticky bars */
+.no2, .no3 {
+  width: 100%;
+  height: 5px;
+  background-color: white;
+  box-shadow: inset 0 0 2px black;  
+  position: sticky;
+  z-index: 200;
+}
+.no2 { top: 0; }
+.no3 { top: 50px; z-index: 300; }
+
+/* Navigation */
+nav {
+  background: #0d3970fe;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 5px;
+  z-index: 500;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul li {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  white-space: nowrap;
+  min-width: 50px;
+  height: 45px;
+  line-height: 30px;
+  box-shadow: 0 0 5px white;
+}
+
+nav ul li:hover {
+  background: #2dbaabfe;
+  color: yellow;
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
+  background: #0d3970fe;
+  margin-top: 10px;
+  padding: 0;
+  list-style: none;
+  min-width: 120px;
+  box-shadow: 0 0 5px black;
+  z-index: 100;
+  text-align: center;
+}
+
+nav ul li ul li {
+  padding: 10px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  box-shadow: none;
+  font-size: 18px;
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+
+nav ul li ul li:hover {
+  background: #2dbaabfe;
+  color: yellow;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+nav ul li a:hover {
+  color: yellow;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  text-align: center;
+  color: white;
+  overflow: hidden;   /* extra border हटाने के लिए */
+}
+
+.hero img {
+  width: 100%;   /* पूरी स्क्रीन की चौड़ाई */
+  height: auto;  /* ऑटोमैटिक हाइट */
+  display: block;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 40px;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+}
+
+.hero-text p {
+  font-size: 20px;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+}
+
+/* Text के पीछे हल्की layer ताकि readable रहे */
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3);  /* हल्का fade effect */
+}
+
+/* Contact Section */
+.contact-section {
+  max-width: 1000px;
+  margin: 50px auto;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.contact-form, .contact-info {
+  flex: 1;
+  min-width: 300px;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.contact-form h2, .contact-info h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 25px;
+}
+
+.contact-form form input, 
+.contact-form form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.contact-form form button {
+  width: 100%;
+  padding: 12px;
+  background: #e74c3c;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-form form button:hover {
+  background: #c0392b;
+}
+
+/* Contact Info */
+.contact-info p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.contact-info p span {
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin-top: 50px;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  
+  .contact-section { margin: 30px 20px; gap: 20px; }
+}
+
+
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+  <div class="header-container">
+    <img src="logo.png" alt="Logo">
+    <h1>Mahendra Cloth House</h1>
+  </div>
+</header>
+<div class="no2"></div>
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+ <li><a href="My-order.html">My Order</a></li>
+    <li>Category ⬇
+      <ul>
+  
+        
+        
+        
+        <li><a href="Men.html">Man</a></li>
+      <li><a href="Women.html">Women</a></li>
+      <li><a href="Kids.html">Kids</a></li>
+      </ul>
+    </li>
+    <li> <a href="Favourite.html">Favourites</a></li>
+  </ul>
+</nav>  
+<div class="no3"></div>
+
+<section class="hero">
+  <img src="logo.png" alt="Hero Image">
+  <div class="hero-text">
+    <h1>Contact Us</h1>
+    <p>हमसे जुड़े और अपने सवाल पूछें</p>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<div class="contact-section">
+  <!-- Form -->
+  <div class="contact-form">
+    <h2>Send Us a Message</h2>
+    <form id="whatsappForm">
+    <b>  Name </b>
+      <input type="text" id="name" placeholder="Your Name" required>
+
+      
+      
+      <b> Mobile Number</b>
+<input type="tel" id="phone" 
+       placeholder="Your Mobile Number" 
+       required 
+       maxlength="10" 
+       pattern="[0-9]{10}" 
+       oninput="this.value=this.value.replace(/[^0-9]/g,'')" >
+      Message
+      <textarea rows="5" id="message" placeholder="Enter your message" required></textarea>
+      <button type="submit">Send Message on WhatsApp</button>
+    </form>
+  </div>
+
+  <!-- Contact Info -->
+<div class="contact-info" style="
+  background: linear-gradient(135deg, #fdfbfb, #ebedee);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  font-size: 16px;
+  line-height: 1.8;
+  color: #2c3e50;
+  border: 2px solid #3498db;
+">
+  <h2 style="
+    text-align: center;
+    color: #3498db;
+    margin-bottom: 20px;
+    font-size: 22px;
+    border-bottom: 2px solid #3498db;
+    display: inline-block;
+    padding-bottom: 5px;
+  ">हमारा पता</h2>
+
+  <p style="margin: 10px 0;">
+    <span style="font-weight: bold; color: #e74c3c;">पता:</span><br>
+    उत्तर प्रदेश <br>
+    जिला- सीतापुर <br>
+    पोस्ट- कमलापुर <br>
+    रोड- जयरामपुर <br>
+    निकट रमेश्वरी तिरुपाठी विद्या मंदिर स्कूल <br>
+    एवं विशाल मेडिकल स्टोर <br>
+    गुड्डू गारमेंट्स
+  </p>
+
+  <p style="margin: 10px 0;">
+    <span style="font-weight: bold; color: #e74c3c;">मोबाइल:</span> 
+    <a href="tel:9838881619" style="text-decoration: none; color: #2c3e50; font-weight: bold;">
+      9838881619
+    </a>
+  </p>
+
+  <p style="margin: 10px 0;">
+    <span style="font-weight: bold; color: #e74c3c;">Email:</span> 
+    <a href="mailto:mahendra143mk2@gmail.com" style="text-decoration: none; color: #2c3e50; font-weight: bold;">
+      mahendra143mk2@gmail.com
+    </a>
+  </p>
+</div>
+</div>
+<div class="contact-info" style="margin-top:25px;">
+  <h2 style="color:#3498db;">⏰ Opening Hours</h2>
+  <p>प्रतिदिन: सुबह 8:00 AM – रात 9:00 PM</p>
+</div>
+
+
+
+
+<!-- Contact Buttons -->
+
+
+
+<div style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin:20px 0;">
+  
+  <!-- Call Button -->
+  <a href="tel:+919838881619" 
+     style="flex:1; min-width:100px; 
+      display:flex; align-items:center; justify-content:center; gap:5px;
+      padding:12px 15px; background:#27ae60; color:white; 
+      text-decoration:none; border-radius:8px; font-size:14px; font-weight:bold; 
+      box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+    📞 <span>Call Now</span>
+  </a>
+  
+  <!-- WhatsApp Button -->
+  <a href="https://wa.me/919838881619" target="_blank" 
+     style="flex:1; min-width:120px; 
+      display:flex; align-items:center; justify-content:center; gap:8px;
+      padding:12px 15px; background:#25D366; color:white; 
+      text-decoration:none; border-radius:8px; font-size:16px; font-weight:bold; 
+      box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+    💬 <span>WhatsApp</span>
+  </a>
+  
+  <!-- Google Maps Button -->
+  <a href="https://maps.app.goo.gl/XW4BEcUsoBopQBvM9" target="_blank"
+     style="flex:1; min-width:120px; 
+      display:flex; align-items:center; justify-content:center; gap:8px;
+      padding:12px 15px; background:#78ffadfe; color:white; 
+      text-decoration:none; border-radius:8px; font-size:16px; font-weight:bold; 
+      box-shadow:0 4px 8px rgba(0,0,0,0.2);">
+    <img src="https://cdn-icons-png.flaticon.com/512/2991/2991231.png" 
+         alt="Google Maps" style="width:22px; height:22px;">
+    <span>Maps</span>
+  </a>
+
+</div>
+
+
+
+
+<h2 style="text-align:center; margin:20px; color:#2c3e50;">हमारा लोकेशन</h2>
+
+<div style="margin:30px auto; max-width:900px; border-radius:15px; overflow:hidden; box-shadow:0 5px 15px rgba(0,0,0,0.2);">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14231.234567!2d80.8475893!3d27.2296023!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399fddc52b3d79f3%3A0xYOURPLACEID!2sKamlapur%2C%20Sitapur%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v" 
+    width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+  </iframe>
+</div>
+
+
+<a id="whatsappBtn" 
+   href="https://wa.me/919838881619" 
+   target="_blank"
+   style="position:fixed; bottom:20px; right:20px; background:#25D366; color:white; 
+   padding:12px; border-radius:50%; box-shadow:0 4px 8px rgba(0,0,0,0.2); 
+   cursor:grab; user-select:none; font-size:22px; text-align:center; z-index:9999;">
+   💬
+</a>
+
+<footer>
+  <p>&copy; 2025 Mahendra Cloth House. All Rights Reserved.</p>
+</footer>
+
+<script>
+document.getElementById("whatsappForm").addEventListener("submit", function(e){
+  e.preventDefault();
+  let name = document.getElementById("name").value.trim();
+  let phone = document.getElementById("phone").value.trim();
+  let msg = document.getElementById("message").value.trim();
+
+  // Mobile number validation (exactly 10 digits)
+  let phonePattern = /^[0-9]{10}$/;
+  if (!phonePattern.test(phone)) {
+    alert("कृपया 10 अंकों का सही मोबाइल नंबर डालें।");
+    return;
+  }
+
+  // WhatsApp URL
+  let url = "https://wa.me/919838881619?text="
+            + "👤 नाम: " + encodeURIComponent(name) + "%0A"
+            + "📞 नंबर: " + encodeURIComponent(phone) + "%0A"
+            + "💬 संदेश: " + encodeURIComponent(msg);
+
+  window.open(url, '_blank');
+
+  // Thank You message
+  alert("✅ Thank you! आपका संदेश WhatsApp पर भेज दिया गया है।");
+  
+  // Form reset
+  document.getElementById("whatsappForm").reset();
+});
+
+
+  const btn = document.getElementById("whatsappBtn");
+  let isDragging = false, offsetX, offsetY;
+
+  // Mouse Drag
+  btn.addEventListener("mousedown", (e) => {
+    isDragging = true;
+    offsetX = e.clientX - btn.offsetLeft;
+    offsetY = e.clientY - btn.offsetTop;
+    btn.style.cursor = "grabbing";
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (isDragging) {
+      btn.style.left = (e.clientX - offsetX) + "px";
+      btn.style.top = (e.clientY - offsetY) + "px";
+      btn.style.right = "auto";
+      btn.style.bottom = "auto";
+    }
+  });
+
+  document.addEventListener("mouseup", () => {
+    isDragging = false;
+    btn.style.cursor = "grab";
+  });
+
+  // Touch Drag (Mobile Support)
+  btn.addEventListener("touchstart", (e) => {
+    isDragging = true;
+    offsetX = e.touches[0].clientX - btn.offsetLeft;
+    offsetY = e.touches[0].clientY - btn.offsetTop;
+  });
+
+  document.addEventListener("touchmove", (e) => {
+    if (isDragging) {
+      btn.style.left = (e.touches[0].clientX - offsetX) + "px";
+      btn.style.top = (e.touches[0].clientY - offsetY) + "px";
+      btn.style.right = "auto";
+      btn.style.bottom = "auto";
+    }
+  });
+
+  document.addEventListener("touchend", () => {
+    isDragging = false;
+  });
+
+</script>
+
+</body>
+</html>

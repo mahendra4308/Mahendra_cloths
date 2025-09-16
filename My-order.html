@@ -1,0 +1,102 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders - Mahendra Cloth House</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;font-family:"Segoe UI",Arial,sans-serif;}
+    body{background:#f0f2f5;color:#333;line-height:1.6;}
+
+    /* Header */
+    header{display:flex;align-items:center;justify-content:space-between;
+      background:black;padding:12px 24px;color:#fff;
+      box-shadow:0 2px 8px rgba(0,0,0,0.2);}
+    header .logo{display:flex;align-items:center;gap:12px;}
+    header .logo img{height:48px;width:48px;border-radius:50%;border:2px solid #fff;}
+    header h1{font-size:22px;font-weight:700;}
+
+    /* Navigation */
+    nav{background:#0d3970fe;padding:8px;}
+    nav ul{list-style:none;display:flex;flex-wrap:wrap;gap:5px;justify-content:center;
+      height:40px;line-height:40px;}
+    nav ul li a{color:#fff;text-decoration:none;font-size:15px;font-weight:500;
+      padding:6px 10px;border-radius:4px;transition:0.3s;
+      border-right:1px solid white;border-left:1px solid white;}
+    nav ul li a:hover{background:#fff;color:#222;}
+
+    /* Container */
+    .container{max-width:1000px;margin:30px auto;background:#fff;
+      padding:30px;border-radius:16px;
+      box-shadow:0 6px 20px rgba(0,0,0,0.12);}
+    h2{margin-bottom:20px;font-size:24px;color:#0d3970fe;font-weight:700;
+      border-left:5px solid #27ae60;padding-left:10px;}
+
+    /* Orders */
+    .order-card{display:flex;gap:20px;background:#fafafa;
+      border:1px solid #ddd;border-radius:12px;
+      padding:15px;margin-bottom:20px;box-shadow:0 3px 8px rgba(0,0,0,0.1);}
+    .order-card img{width:120px;height:140px;object-fit:cover;border-radius:8px;
+      border:1px solid #ccc;}
+    .order-details{flex:1;}
+    .order-details h3{font-size:18px;margin-bottom:8px;color:#222;}
+    .order-info{font-size:14px;margin-bottom:5px;}
+    .no-orders{text-align:center;padding:40px;color:#555;font-size:18px;}
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+      <h1>Mahendra Cloth House</h1>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="About-us.html">About Us</a></li>
+      <li><a href="Contact-us.html">Contact Us</a></li>
+      <li><a>My Orders</a></li>
+    </ul>
+  </nav>
+
+  <!-- Orders Container -->
+  <div class="container">
+    <h2>My Orders</h2>
+    <div id="ordersList"></div>
+  </div>
+
+<script>
+window.addEventListener("DOMContentLoaded", () => {
+  const ordersList = document.getElementById("ordersList");
+  const orders = JSON.parse(localStorage.getItem("orders")) || [];
+
+  if (orders.length === 0) {
+    ordersList.innerHTML = `<div class="no-orders">You have not placed any orders yet.</div>`;
+    return;
+  }
+
+  orders.forEach(order => {
+    const div = document.createElement("div");
+    div.className = "order-card";
+    div.innerHTML = `
+      <img src="${order.imgSrc}" alt="Product">
+      <div class="order-details">
+        <h3>${order.productName}</h3>
+        <p class="order-info"><strong>Price:</strong> ₹${order.price}</p>
+        <p class="order-info"><strong>Size:</strong> ${order.size}</p>
+        <p class="order-info"><strong>Quantity:</strong> ${order.quantity}</p>
+        <p class="order-info"><strong>Total:</strong> ₹${order.total}</p>
+      </div>
+    `;
+    ordersList.appendChild(div);
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Women Collection - Mahendra Cloth House</title>
+  <style>
+  
+  
+  *{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#f4f6f9;color:#333;line-height:1.7}
+
+/* Header */
+header{background:#222;padding:12px 20px}
+.header-container{display:flex;align-items:center;gap:15px}
+.header-container img{height:60px;border-radius:10px}
+.header-container h1{color:white;font-size:22px}
+
+/* Nav */
+nav{background:#0d3970fe;box-shadow:0 2px 6px rgba(0,0,0,0.2);position:sticky;top:5px;z-index:50}
+nav ul{list-style:none;display:flex;justify-content:space-between;align-items:center}
+nav ul li{flex:1;text-align:center;padding:10px;color:white;font-weight:600;cursor:pointer;transition:0.3s;white-space:nowrap;min-width:50px;height:42px;line-height:30px;box-shadow:0 0 5px white}
+nav ul li:hover{background:#2dbaabfe;color:yellow}
+nav ul li ul{display:none;position:absolute;background:#0d3970fe;margin-top:10px;min-width:120px;box-shadow:0 0 5px black;text-align:center}
+nav ul li ul li{padding:10px;color:white;font-size:16px}
+nav ul li:hover>ul{display:block}
+nav ul li a{text-decoration:none;color:white;display:block;width:100%}
+nav ul li a:hover{color:yellow}
+.no2,.no3{width:100%;height:5px;background-color:white;box-shadow:inset 0 0 2px black;position:sticky;z-index:200}
+.no2{top:0}
+.no3{
+  top:47px;z-index:300
+  
+}
+
+
+/* Gallery items container */
+.all-img {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7px;
+  padding: 10px;
+  background-color: #e3ebe4ec;
+}
+
+/* Individual gallery item container */
+.img1 {
+  background-color: white;
+  border-radius: 5px;
+  width: 100%;
+  border: 2px solid white;
+  height: 450px; /* Changed from fixed height */
+  position: relative;
+  overflow: hidden;
+  display: flex; /* Use flexbox for vertical alignment */
+  flex-direction: column;
+}
+
+/* Image inside the container */
+.img1 img {
+  width: 100%;
+  height: 430px; /* Maintains a consistent image height */
+  object-fit: cover; /* Ensures the image covers the area */
+  display: block; /* Removes extra space below the image */
+}
+
+
+
+
+
+
+/* Product Name */
+.product-name {
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  background-color: lightyellow;
+  
+  padding: 10px 5px;
+  border-radius: 5px;
+  box-sizing: border-box; /* Includes padding in the element's total width and height */
+}
+
+/* Buy Now button */
+.buy-now {
+  background-color: #375840fe;
+  border-bottom: 3px solid #81f4e8fe;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: auto; /* This pushes the button to the bottom */
+  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+.buy-now:hover {
+  background: darkred;
+}
+
+/* Favourite button */
+.fav-btn {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  font-size: 22px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s;
+  border: 1px solid gray;
+}
+
+.fav-btn.active {
+  background: red;
+  color: white;
+}
+.women{
+  background-color: #b8b874ec;
+  color: black;
+}
+
+h5{
+  text-align: center;
+  color: gray;
+  padding: 20px;
+}
+
+ .product-name{
+  white-space: pre-line;
+  
+}
+
+
+/* men.html से copy किया गया CSS */
+.product-price {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: green;
+  background-color: #f8f8f8;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: -5px;
+}
+
+.size-container {
+  display: flex;
+  gap: 6px;
+  margin: 4px 0 8px 0;
+  justify-content: center;
+}
+
+.size-option {
+  position: relative;
+}
+
+.size-option input {
+  display: none;
+}
+
+.size-option span {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  border: 1.8px solid #333;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;
+  user-select: none;
+  transition: 0.3s;
+}
+
+.size-option input:checked + span {
+  background: #0d3970fe;
+  color: #fff;
+  border-color: #333;
+}
+
+</style>
+</head>
+<body>
+  
+  
+  <header>
+  <div class="header-container">
+    <img src="logo.png" alt="Logo">
+    <h1>Mahendra Cloth House</h1>
+  </div>
+</header>
+
+<div class="no2"></div>
+<nav>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="My-order.html">My Order</a></li>
+    <li>Category ⬇
+      <ul>
+ <li><a href="Men.html">Man</a></li>
+      <li><a href="Women.html">Women</a></li>
+        <li class="Kids"><a href="Kids.html">Kids</a></li>
+        
+      </ul>
+    </li>
+    <li><a href="Favourite.html">Favourites</a></li>
+  </ul>
+</nav>
+<div class="no3"></div>
+
+  <h2 style="text-align:center; padding:10px; background:#0d3970fe; color:white; margin-top:10px;">Women Collection</h2>
+  <div class="all-img" id="galleryContainer"></div>
+  <h5>No More</h5>
+
+
+    <script>
+        // localStorage से सभी प्रोडक्ट्स का डेटा प्राप्त करें
+        const allProducts = JSON.parse(localStorage.getItem("products")) || [];
+        const galleryContainer = document.getElementById("galleryContainer");
+        const womenProducts = allProducts.filter(p => p.category === "women");
+        
+        
+                function openImagePage(product) {
+            const newWin = window.open("", "_blank");
+            newWin.document.title = product.productName || "Image View";
+
+            newWin.document.write(`
+              <!DOCTYPE html>
+              <html lang="en">
+              <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>${product.productName}</title>
+                <style>
+                  body { margin: 0; padding: 0; font-family: Arial, sans-serif; background: #f0f0f0; }
+                  
+                  /* Navbar */
+                  nav { background: #0d3970fe; box-shadow: 0 2px 6px rgba(0,0,0,0.2); position: sticky; top: 0; z-index: 500; }
+                  nav ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: space-between; align-items: center; }
+                  nav ul li { flex: 1; text-align: center; padding: 10px; color: white; font-weight: 600; cursor: pointer; transition: 0.3s; white-space: nowrap; min-width: 50px; height: 30px; line-height: 30px; box-shadow: 0 0 5px white; }
+                  nav ul li:hover { background: #2dbaabfe; color: yellow; }
+                  @media (max-width: 600px) { nav ul li { padding: 8px; font-size: 14px; } }
+                  nav ul li ul { display: none; position: absolute; background: #0d3970fe; margin-top: 10px; padding: 0; list-style: none; min-width: 120px; box-shadow: 0 0 5px black; z-index: 100; text-align: center; }
+                  nav ul li ul li { padding: 10px; text-align: center; color: white; cursor: pointer; box-shadow: none; font-size: 18px; }
+                  nav ul li:hover > ul { display: block; }
+                  nav ul li ul li:hover { background: #2dbaabfe; color: yellow; }
+                  nav ul li a { text-decoration: none; color: white; display: block; height: 100%; width: 100%; }
+                  nav ul li a:hover { color: yellow; }
+                  
+                  /* Main image (top) */
+                  .main-img-container { width: 100%; height: 400px; display: flex; justify-content: center; align-items: center; background: #000; border-bottom: 2px solid #ccc; position: relative; }
+                  .main-img { width: 90%; height: 370px; object-fit: cover; border-radius: 5px; display: block; }
+                  .fav-btn { position: absolute; top: 15px; right: 15px; background: #b4b3b7; border: 1px solid black; color: white; font-size: 14px; font-weight: bold; padding: 7px; border-radius: 50%; cursor: pointer; }
+                  .fav-btn.active { background: red; color: white; }
+                  
+                  /* Product info section */
+                  .product-info { text-align: center; padding: 15px; background: #fff; border-bottom: 1px solid #ddd; }
+                  .product-name-heading { font-size: 1.4rem; font-weight: 700; color: #333; margin-bottom: 8px; }
+                  .product-price { margin: 6px 0; font-size: 16px; color: green; font-weight: 600; }
+                  .size-container { display: flex; justify-content: center; gap: 8px; margin-top: 8px; flex-wrap: wrap; }
+                  .size-option { display: inline-flex; align-items: center; justify-content: center; width: 40px; height: 40px; border-radius: 50%; background: #e6f6f3; border: 2px solid #cfeee6; cursor: pointer; transition: 0.15s; user-select: none; }
+                  .size-option span { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; font-weight: 700; color: #0d3970fe; border-radius: 50%; }
+                  .size-option input { display: none; }
+                  .size-option input:checked + span { background: #0d3970fe; color: #fff; }
+                  .size{ position:absolute; display:inline-block; margin-left:-45%; margin-top:8px; font-size:20px; }
+                  .buy-now-main { margin-top: 10px; background: #0d3970fe; width: 90%; color: white; padding: 10px 22px; border-radius: 6px; display: inline-block; font-weight: 700; cursor: pointer; }
+
+                  /* Related images (thumbnails) */
+                  .thumbnails-container { display: grid; gap: 3px; padding: 8px; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); background: transparent; }
+                  .thumbnail { display: flex; flex-direction: column; align-items: center; background: #dcdcdc; border-radius: 6px; padding: 6px; border: 2px solid #fff; min-height: 360px; }
+                  .thumbnail img { width: 100%; height: 330px; object-fit: cover; border-radius: 4px; cursor: pointer; display: block; }
+                  .thumbnail-name { color: black; margin-top: 5px; font-size: 14px; text-align: center; font-weight:bold; background-color: lightyellow; 
+                    width:100%;
+                    height:45px;
+                    line-height:45px;
+                  }
+
+                  /* Responsive tweaks */
+                  @media (max-width:600px) { .main-img-container { height: 380px; } .main-img { height: 350px; } }
+                  
+                  h5{ text-align:center; color:gray; }
+                </style>
+              </head>
+              <body>
+                <nav>
+                  <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="My-order.html">My Order</a></li>
+                    <li>Category ⬇
+                      <ul>
+                        <li><a href="Men.html">Man</a></li>
+                        <li><a href="Women.html">Women</a></li>
+                        <li class="kids"><a href="Kids.html">Kids</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="Favourite.html">Favourites</a></li>
+                  </ul>
+                </nav>    
+                <div class="main-img-container">
+                  <div class="fav-btn" id="mainFavBtn">♡</div>
+                  <img id="mainImage" class="main-img" src="${product.imgSrc}" alt="${product.productName}">
+                </div>
+                <div class="product-info">
+                  <div id="mainProductName" class="product-name-heading">${product.productName}</div>
+                  <div id="mainProductPrice" class="product-price">${product.price}</div>
+                  <div class="size"> Size</div>
+                  <div id="mainProductSizes" class="size-container"></div>
+                  <div style="margin-top:10px;"><button id="buyMainBtn" class="buy-now-main">Buy Now</button></div>
+                </div>
+                <div id="thumbnails" class="thumbnails-container"></div>
+                <h5>No More</h5>
+                <script>
+                  const allProducts = JSON.parse(localStorage.getItem("products")) || [];
+                  const womenProducts = allProducts.filter(p => p.category === "women");
+                  let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+
+                  function toggleFavourite(prod) {
+                    const isFavourite = favourites.some(fav => fav.imgSrc === prod.imgSrc);
+                    if (isFavourite) {
+                      favourites = favourites.filter(fav => fav.imgSrc !== prod.imgSrc);
+                    } else {
+                      favourites.push(prod);
+                    }
+                    localStorage.setItem("favourites", JSON.stringify(favourites));
+                    updateMainFavBtn();
+                  }
+
+                  function updateMainFavBtn() {
+                    const mainFavBtn = document.getElementById("mainFavBtn");
+                    const mainImageSrc = document.getElementById("mainImage").src;
+                    const isFavourite = favourites.some(fav => fav.imgSrc === mainImageSrc);
+                    if (isFavourite) {
+                      mainFavBtn.classList.add("active");
+                      mainFavBtn.textContent = "♥";
+                    } else {
+                      mainFavBtn.classList.remove("active");
+                      mainFavBtn.textContent = "♡";
+                    }
+                  }
+                  
+                  function renderMain(product) {
+                    const mainImg = document.getElementById('mainImage');
+                    const mainName = document.getElementById('mainProductName');
+                    const mainPrice = document.getElementById('mainProductPrice');
+                    const mainSizes = document.getElementById('mainProductSizes');
+                    
+                    mainImg.src = product.imgSrc;
+                    mainImg.alt = product.productName || 'Product';
+                    mainName.textContent = product.productName || '';
+                    mainPrice.textContent = (product.price !== undefined) ? product.price : '';
+                    
+                    const safeName = 'size_' + btoa(product.productName || String(Math.random())).replace(/=/g,'');
+                    mainSizes.innerHTML = '';
+                    
+                    if (Array.isArray(product.sizes) && product.sizes.length) {
+                        product.sizes.forEach((sz, idx) => {
+                            const label = document.createElement('label');
+                            label.className = 'size-option';
+                            const input = document.createElement('input');
+                            input.type = 'radio';
+                            input.name = safeName;
+                            input.value = sz;
+                            if (idx === 0) input.checked = true;
+                            const span = document.createElement('span');
+                            span.textContent = sz;
+                            label.appendChild(input);
+                            label.appendChild(span);
+                            mainSizes.appendChild(label);
+                        });
+                    } else {
+                        mainSizes.textContent = '';
+                    }
+                    updateMainFavBtn();
+                  }
+                  
+                  function renderThumbnails(currentProduct) {
+                    const thumbContainer = document.getElementById('thumbnails');
+                    thumbContainer.innerHTML = '';
+                    const others = womenProducts.filter(p => p.imgSrc !== currentProduct.imgSrc);
+                    
+                    // shuffle
+                    for (let i = others.length - 1; i > 0; i--) {
+                      const j = Math.floor(Math.random() * (i + 1));
+                      [others[i], others[j]] = [others[j], others[i]];
+                    }
+                    
+                    const slice = others.slice(0, 4);
+                    
+                    slice.forEach(prod => {
+                      const box = document.createElement('div');
+                      box.className = 'thumbnail';
+                      
+                      const img = document.createElement('img');
+                      img.src = prod.imgSrc;
+                      img.alt = prod.productName || 'thumb';
+                      
+                      const nameDiv = document.createElement('div');
+                      nameDiv.className = 'thumbnail-name';
+                      nameDiv.textContent = prod.productName || '';
+                      
+                      img.addEventListener('click', () => {
+                        renderMain(prod);
+                        renderThumbnails(prod);
+                        window.scrollTo({ top: 0 });
+                      });
+                      
+                      box.appendChild(img);
+                      box.appendChild(nameDiv);
+                      thumbContainer.appendChild(box);
+                    });
+                  }
+                  
+                  document.getElementById("mainFavBtn").addEventListener("click", () => {
+                    const mainImageSrc = document.getElementById("mainImage").src;
+                    const currentProduct = womenProducts.find(p => p.imgSrc === mainImageSrc);
+                    if (currentProduct) {
+                      toggleFavourite(currentProduct);
+                    }
+                  });
+                  document.getElementById("buyMainBtn").addEventListener("click", () => {
+  // Selected size
+  const selectedSize = Array.from(document.querySelectorAll('.size-option input'))
+    .find(input => input.checked)?.value || "";
+
+  // Quantity default 1 (अगर quantity feature add करना है तो यहाँ input ले सकते हो)
+  const qty = 1;
+
+  // Product data बनाओ
+  const product = {
+    imgSrc: document.getElementById("mainImage").src,
+    productName: document.getElementById("mainProductName").textContent || "Product",
+    price: document.getElementById("mainProductPrice").textContent || "₹0",
+    sizes: Array.from(document.querySelectorAll(".size-option span")).map(s => s.textContent),
+    selectedSize: selectedSize,
+    quantity: qty
+  };
+
+  // Save in localStorage
+  localStorage.setItem("selectedProduct", JSON.stringify(product));
+
+  // Open Buy-now.html
+  window.location.href = "Buy-now.html";
+});
+  
+
+                  
+                  renderMain(womenProducts.find(p => p.imgSrc === "${product.imgSrc}"));
+                  renderThumbnails(womenProducts.find(p => p.imgSrc === "${product.imgSrc}"));
+                <\/script>
+              </body>
+              </html>
+            `);
+            newWin.document.close();
+        }
+
+            
+        
+        
+        
+        
+        
+        
+
+
+
+        
+        function renderWomenProducts() {
+    const allProducts = JSON.parse(localStorage.getItem("products")) || [];
+    const womenProducts = allProducts.filter(p => p.category === "women");
+    
+    galleryContainer.innerHTML = '';
+    
+    womenProducts.forEach(product => {
+        const imgDiv = document.createElement("div");
+        imgDiv.className = "img1";
+        
+        const favBtn = document.createElement("div");
+        favBtn.className = "fav-btn";
+        favBtn.textContent = "♡";
+
+        const img = document.createElement("img");
+        img.src = product.imgSrc;
+        img.alt = product.productName;
+
+        const nameElement = document.createElement("div");
+        nameElement.className = "product-name";
+        nameElement.textContent = product.productName;
+
+        const priceElement = document.createElement("div");
+        priceElement.className = "product-price";
+        priceElement.textContent = product.price;
+
+        const sizeContainer = document.createElement("div");
+        sizeContainer.className = "size-container";
+        if (product.sizes && product.sizes.length > 0) {
+            product.sizes.forEach((size, index) => {
+                const label = document.createElement("label");
+                label.className = "size-option";
+                const input = document.createElement("input");
+                input.type = "radio";
+                input.name = `size-${product.productName.replace(/\s/g, '-')}`;
+                input.value = size;
+                if (index === 0) input.checked = true;
+                const span = document.createElement("span");
+                span.textContent = size;
+                label.appendChild(input);
+                label.appendChild(span);
+                sizeContainer.appendChild(label);
+            });
+        }
+
+        const buyBtn = document.createElement("div");
+        buyBtn.className = "buy-now";
+        buyBtn.textContent = "Buy Now";
+
+        imgDiv.appendChild(favBtn);
+        imgDiv.appendChild(img);
+        imgDiv.appendChild(nameElement);
+        imgDiv.appendChild(priceElement);
+        imgDiv.appendChild(sizeContainer);
+        imgDiv.appendChild(buyBtn);
+
+        galleryContainer.appendChild(imgDiv);
+
+        // बदलाव: अब नया टैब केवल इमेज पर क्लिक करने पर ही खुलेगा
+        img.addEventListener("click", () => {
+            openImagePage(product);
+        });
+
+        // बदलाव: साइज़ कंटेनर पर क्लिक इवेंट को रोकें ताकि नया टैब न खुले
+        sizeContainer.addEventListener("click", (e) => {
+            e.stopPropagation();
+        });
+        buyBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    // Selected size ले लो
+    const selectedSize = imgDiv.querySelector(".size-option input:checked")?.value || "";
+
+    // Quantity (default 1, या अगर quantity input है तो वहाँ से लो)
+    const qty = 1;
+
+    // Product object बनाओ
+    const selectedProduct = {
+        imgSrc: product.imgSrc,
+        productName: product.productName,
+        price: product.price,
+        sizes: product.sizes || [],
+        selectedSize: selectedSize,
+        quantity: qty
+    };
+
+    // localStorage में save करो
+    localStorage.setItem("selectedProduct", JSON.stringify(selectedProduct));
+
+    // Buy-now.html खोलो
+    window.location.href = "Buy-now.html";
+});
+        // Buy Now बटन का क्लिक इवेंट पहले से ही सही था
+        
+        favBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            toggleFavourite(product, favBtn);
+        });
+        
+        updateFavBtn(product.imgSrc, favBtn);
+    });
+}
+
+        
+
+
+
+        
+
+        function toggleFavourite(product, favBtn) {
+            let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+            const isFavourite = favourites.some(fav => fav.imgSrc === product.imgSrc);
+            if (isFavourite) {
+                favourites = favourites.filter(fav => fav.imgSrc !== product.imgSrc);
+            } else {
+                favourites.push(product);
+            }
+            localStorage.setItem("favourites", JSON.stringify(favourites));
+            updateFavBtn(product.imgSrc, favBtn);
+        }
+
+        function updateFavBtn(imgSrc, favBtn) {
+            let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+            const isFavourite = favourites.some(fav => fav.imgSrc === imgSrc);
+            if (isFavourite) {
+                favBtn.classList.add("active");
+                favBtn.textContent = "♥";
+            } else {
+                favBtn.classList.remove("active");
+                favBtn.textContent = "♡";
+            }
+        }
+
+        // फ़ंक्शन को कॉल करें ताकि पेज लोड होने पर प्रोडक्ट्स दिखें
+        renderWomenProducts();
+        
+
+    </script>
+
+
+</body>
+</html>
