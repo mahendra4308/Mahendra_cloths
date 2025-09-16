@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  
+  
+  
+    <meta name="description" content="Mahendra Cloth House - Sitapur Kamlapur में कपड़ों का बेहतरीन कलेक्शन। Men, Women और Kids के लिए नए फैशन उपलब्ध।">
+  <meta name="keywords" content="Cloth Shop Sitapur, कपड़े Sitapur, Mahendra Cloth House, Kamlapur कपड़े, कपड़ों की दुकान Sitapur">
+  <meta name="author" content="Mahendra Cloth House">
+
+  <meta property="og:title" content="Mahendra Cloth House - Sitapur Kamlapur">
+  <meta property="og:description" content="Sitapur Kamlapur में फैशनेबल कपड़ों की दुकान - Men, Women और Kids के लिए नया कलेक्शन।">
+  <meta property="og:type" content="website">
+  
+  <meta property="og:image" content="logo.png">
+
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/892/892458.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahendra Cloth House</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .title {
+  position: relative;
+  display: flex;
+  align-items: center;
+  border-bottom: 2px solid red;
+  box-shadow: 0 0 30px yellow;
+  background-color: #2dbaabfe;
+  color: #0d3970fe;
+  padding: 10px 15px;
+  font-size: 25px;
+  font-weight: bold;
+}
+.title-text {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 70%;
+  text-align: center;
+}
+    .help {
+      position: absolute;
+      right: 15px;
+      background: #fff;
+      color: blue;
+      padding: 5px 12px;
+      border-radius: 5px;
+      font-size: 20px;
+      font-weight: 600;
+      box-shadow: 0 0 5px gray;
+      cursor: pointer;
+      white-space: nowrap;
+       font-weight: bold;
+    }
+    .help:active{
+      color: white;
+      background-color: black;
+    }
+
+    @media (max-width: 600px) {
+      .title {
+        font-size: 18px;
+        padding: 8px 12px;
+      }
+      .help {
+        font-size: 18px;
+        padding: 4px 10px;
+      }
+    }
+    .help a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+.help a:visited {
+  color: inherit;
+}
+    .logo{
+      width: 100%;
+      height: auto;
+      margin-bottom:0;
+    }
+    .no{
+width: 100%;
+height: 12px;
+background-color: white;
+box-shadow:inset 0 0 5px black;
+margin-top: -5px;
+
+}
+  .no2{
+width: 100%;
+height: 5px;
+background-color: white;
+box-shadow:inset 0 0 2px black;
+position: sticky;
+top: 0;
+z-index: 200;
+
+}
+  .no3{
+width: 100%;
+height: 5px;
+background-color: white;
+box-shadow:inset 0 0 2px black;
+position: sticky;
+top: 46px;
+z-index: 300;
+}
+.slider{
+    position:relative;
+    width:100%;
+    height: 500PX;
+    overflow:hidden;
+    box-shadow:0 6px 25px rgba(0,0,0,0.2);
+    background:#000;
+  }
+  .slides{
+    display:flex;
+    width:100%;
+    height:100%;
+    transition:transform 0.6s ease;
+  }
+  .slide{
+    min-width:100%;
+    height:100%;
+  }
+  .slide img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+  }
+  .btn{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.5);
+    border:none;
+    color:#fff;
+    font-size:32px;
+    padding:8px 14px;
+    cursor:pointer;
+    border-radius:6px;
+    z-index:10;
+  }
+  .btn:hover{ background:rgba(0,0,0,0.7); }
+  .prev{ left:10px; }
+  .next{ right:10px; }
+
+nav {
+  background: #0d3970fe;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 5px;
+  z-index: 50;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul li {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  white-space: nowrap;
+  min-width: 50px;
+  height: 30px;
+  line-height: 30px;
+  box-shadow: 0 0 5px white;
+}
+
+nav ul li:hover {
+  background: #2dbaabfe;
+  color: yellow;
+}
+
+@media (max-width: 600px) {
+  nav ul li {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
+  background: #0d3970fe;
+  margin-top: 10px;
+  padding: 0;
+  list-style: none;
+  min-width: 120px;
+  box-shadow: 0 0 5px black;
+  z-index: 100;
+  text-align: center;
+}
+
+nav ul li ul li {
+  padding: 10px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  box-shadow: none;
+  font-size: 18px;
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+
+nav ul li ul li:hover {
+  background: #2dbaabfe;
+  color: yellow;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+nav ul li a:hover {
+  color: yellow;
+}
+
+.menu-panel {
+  position: fixed;
+  top: 0;
+  left: -270px;
+  width: 270px;
+  height: 100%;
+  background-color: lightyellow;
+  overflow-y: auto;
+  transition: left 0.4s ease;
+  z-index: 400;
+  padding-top: 10px;
+  border: 2px solid black;
+}
+
+.menu-panel.active {
+  left: 0;
+  box-shadow: 0 30px 80px black;
+}
+
+.menu-panel a {
+  display: block;
+  color: black;
+  text-decoration: none;
+  font-size: 17px;
+  padding: 15px 20px;
+  border-bottom: 1px solid gray;
+  transition: 0.3s;
+  margin-top: 0;
+}
+
+.menu-panel a:hover {
+  background: #2dbaabfe;
+  color: yellow;
+}
+
+h3{
+  padding: 10px;
+  box-shadow: inset 0 0 10px red;
+}
+h5{
+  text-align: center;
+  color: gray;
+}
+
+
+
+/* Gallery items container */
+.all-img {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 7px;
+  padding: 10px;
+  background-color: #e3ebe4ec;
+}
+
+/* Individual gallery item container */
+.img1 {
+  background-color: white;
+  border-radius: 5px;
+  width: 100%;
+  border: 2px solid white;
+  height: auto; /* Changed from fixed height */
+  position: relative;
+  overflow: hidden;
+  display: flex; /* Use flexbox for vertical alignment */
+  flex-direction: column;
+}
+
+/* Image inside the container */
+.img1 img {
+  width: 100%;
+  height: 380px; /* Maintains a consistent image height */
+  object-fit: cover; /* Ensures the image covers the area */
+  display: block; /* Removes extra space below the image */
+}
+
+/* Product Name */
+.product-name {
+  width: 100%;
+  text-align: center;
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+  background-color: lightyellow;
+  
+  padding: 10px 5px;
+  border-radius: 5px;
+  box-sizing: border-box; /* Includes padding in the element's total width and height */
+}
+
+/* Buy Now button */
+.buy-now {
+  background-color: #375840fe;
+  border-bottom: 3px solid #81f4e8fe;
+  color: white;
+  font-weight: bold;
+  width: 100%;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 5px;
+  text-align: center;
+  cursor: pointer;
+  margin-top: auto; /* This pushes the button to the bottom */
+  box-sizing: border-box; /* Includes padding and border in the element's total width and height */
+}
+
+.buy-now:hover {
+  background: darkred;
+}
+
+/* Favourite button */
+.fav-btn {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  background: rgba(255, 255, 255, 0.8);
+  color: black;
+  font-size: 22px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: 0.3s;
+  border: 1px solid gray;
+}
+
+.fav-btn.active {
+  background: red;
+  color: white;
+}
+
+
+
+
+
+
+
+
+.thankyou-section {
+  padding: 50px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.thankyou-card {
+  position: relative;
+  max-width: 650px;
+  margin: auto;
+  background: #fff;
+  border-radius: 20px 120px;
+  padding: 40px;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  animation: fadeIn 1.5s ease;
+}
+
+.thankyou-card::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 20px;
+  background: repeating-linear-gradient(
+      135deg,
+      #ff4d4d,
+      #ff4d4d 10px,
+      transparent 10px,
+      transparent 20px,
+      #3399ff 20px,
+      #3399ff 30px,
+      transparent 30px,
+      transparent 40px
+  );
+  background-size: 200% 200%;
+  animation: funkyBorder 15s linear infinite;
+  z-index: -1;
+}
+
+.thankyou-card::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #ffe5e5, #fff);
+  z-index: -1;
+}
+
+.thankyou-card h2 {
+  color: #d12a2a;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.thankyou-card p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #444;
+}
+
+.thankyou-card button {
+  margin-top: 25px;
+  padding: 12px 28px;
+  border: none;
+  background: #d12a2a;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.thankyou-card button:hover {
+  background: #b51e1e;
+  transform: scale(1.1);
+}
+
+@keyframes funkyBorder {
+  0% { background-position: 0 0; }
+  100% { background-position: 200% 200%; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+.search-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  z-index: 2000;
+  display: none; 
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.search-overlay.active {
+  display: flex;
+}
+
+
+
+
+
+
+
+.search-overlay h6 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+  padding: 8px;
+  background: linear-gradient(to right, red, orange, #84e996ec); /* gradient color */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 20px;
+}
+
+/* Search box overlay ke top me chipka rahe */
+.search-overlay .search-box {
+  width: 95%;
+  margin: 15px auto;
+  position: sticky;
+  top: 45px;  /* h6 ke niche set */
+  z-index: 2100;
+}
+
+
+
+
+
+.search-box:hover {
+background-color:#f1f3c9ec;
+  
+}
+
+.search-box {
+  width: 90%;
+  height: 45px;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  border: 2px solid blue;
+  border-radius: 25px;
+  background-color: lightyellow;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.search-logo {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  border-radius:50%;
+}
+
+.search-box input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  background: transparent;
+}
+
+.search-icon {
+  font-size: 22px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.mic-icon{
+  font-size: 20px;
+  margin-right: 15px;
+  margin: 10px;
+  
+}
+.mic-icon:hover{
+  color: blue;
+}
+
+
+
+
+
+/* Overlay search page */
+
+
+.search-overlay input {
+  width: 90%;
+  height: 45px;
+
+  border-radius: 25px;
+  font-size: 18px;
+  
+  outline: none;
+}
+h6{
+  text-align: center;
+  font-size: 30px;
+  background-color: yellow;
+margin-top: 0;
+  position: absolute;
+  width: 100%;
+
+}
+.product-name {
+  white-space: pre-line;
+  
+}
+
+
+.product-price {
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: green;
+  background-color: #f8f8f8;
+  padding: 5px;
+  border-radius: 5px;
+  margin-top: -5px;
+}
+
+
+.size-container {
+  display: flex;
+  gap: 6px;
+  margin: 4px 0 8px 0;
+  justify-content: center;
+}
+
+.size-option {
+  position: relative;
+}
+
+.size-option input {
+  display: none;
+}
+
+.size-option span {
+  display: inline-block;
+  width: 28px;      /* छोटा किया */
+  height: 28px;     /* छोटा किया */
+  line-height: 28px;
+  text-align: center;
+  border: 1.8px solid #333;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 12px;  /* छोटा text */
+  user-select: none;
+  transition: 0.3s;
+}
+
+.size-option input:checked + span {
+  background: #0d3970fe;
+  color: #fff;
+  border-color: #333;
+}
+  </style>
+</head>
+<body>
+<div class="title">
+  <img src="menu.png" width="25px" height="25px">
+  <div class="menu-panel" id="menuPanel">
+    <h3>Mahendra Cloth House</h3>
+  <a href="About-us.html"> About Us ➡️</a>
+  <a href="Contact-us.html">  Contact Us ➡️</a>
+</div>
+  <span class="title-text"><i>Mahendra Cloth House</i></span>
+  <div class="help"><a href="Help.html">Help</a></div>
+</div>
+  <img src="logo.png" class="logo">
+  <div class="no"></div>
+   <div class="search-box">
+  <img src="logo.png" alt="Logo" class="search-logo">
+  <input type="text" placeholder="Search baar..." class="searchInput">
+  
+  <i class="fa-solid fa-microphone mic-icon"></i>
+  
+  <span class="search-icon">🔍</span>
+</div>
+  <div class="search-overlay" id="searchOverlay">
+<h6>  Mahendra Cloth House</h6>
+    <div class="search-box">
+  <img src="logo.png" alt="Logo" class="search-logo">
+  <input type="text" placeholder="Search baar..." class="searchInput" id="overlaySearch">
+  
+  <i class="fa-solid fa-microphone mic-icon"></i>
+  
+  <span class="search-icon">🔍</span>
+</div>
+
+</div>
+<div class="no2"></div>
+<div class="slider">
+  <div class="slides" id="slides"></div>
+  <button class="btn prev" id="prev">‹</button>
+  <button class="btn next" id="next">›</button>
+</div>
+  <div class="no2"></div>
+<nav>
+  <ul>
+    <li class="home">Home</li>
+    <li><a href="My-order.html">My Order</a></li>
+    <li>Category ⬇
+    <ul>
+      <li><a href="Men.html">Man</a></li>
+      <li><a href="Women.html">Women</a></li>
+      <li><a href="Kids.html">Kids</a></li>
+      
+      
+    </ul>
+    </li>
+   
+    <li> <a href="Favourite.html">Favourites</a></li>
+    
+  </ul>
+</nav>  
+  <div class="no3"></div>
+  <div class="all-img" id="galleryContainer">
+    </div>
+    <h5>No More</h5>
+  <section style="padding: 40px; background: #f9f9f9; text-align: center;">
+  <h2 style="color:#333;">Why Choose <span style="color:#d12a2a;">Mahendra Cloth House?</span></h2>
+  <p style="max-width: 800px; margin: auto; font-size: 16px; line-height: 1.6; color:#555;">
+    Welcome to <strong>Mahendra Cloth House</strong> – Sitapur Kamlapur का 
+    सबसे भरोसेमंद और ट्रेंडी कपड़ों का कलेक्शन।  
+    <br><br>
+    ✅ Trendy & Stylish Designs (Men, Women & Kids)  
+    ✅ Quality Fabric Guarantee – हर कपड़े में बेस्ट मटेरियल  
+    ✅ Affordable Prices – हर बजट के लिए कलेक्शन  
+    ✅ Friendly Service – हर कस्टमर हमारे लिए फैमिली है  
+    <br><br>
+    हमारा मकसद सिर्फ कपड़े बेचना नहीं, बल्कि आपके भरोसे और मुस्कान को जीतना है।  
+  </p>
+  <h3 style="margin-top: 20px; color:#222;">“Fashion that fits your Family – Style, Quality & Trust together.”</h3>
+</section>
+<section style="padding: 40px; background: #f4f6f9; text-align: center;">
+  <h2 style="color:#333;">Discover the Best Collection</h2>
+  <p style="max-width: 800px; margin: auto; font-size: 16px; line-height: 1.6; color:#555;">
+    Sitapur Kamlapur के दिल से लेकर आपके वार्डरोब तक –  
+    <strong>Mahendra Cloth House</strong> लाता है कपड़ों का ऐसा कलेक्शन 
+    जो हर मौके के लिए परफेक्ट है।  
+    <br><br>
+    👔 Men’s Formal & Casual Wear  
+    👗 Women’s Stylish Outfits  
+    🧒 Kids Wear with Comfort & Style  
+  </p>
+  <h3 style="margin-top: 20px; color:#222;">“Every Outfit Tells a Story – Make Yours Memorable.”</h3>
+</section>
+  <section style="padding: 40px; background: #fff; text-align: center;">
+  <h2 style="color:#333;">Our Promise – हमारा वादा</h2>
+  <p style="max-width: 800px; margin: auto; font-size: 16px; line-height: 1.6; color:#555;">
+    At <strong>Mahendra Cloth House</strong>, हम मानते हैं कि कपड़े सिर्फ पहनने के लिए नहीं होते, 
+    बल्कि आपकी पर्सनैलिटी और कॉन्फिडेंस को और बेहतर बनाते हैं।  
+    <br><br>
+    ✔ 100% Quality Check before Delivery  
+    ✔ Latest Fashion Trends हमेशा Available  
+    ✔ Personalized Service – हर कस्टमर स्पेशल है  
+    ✔ Easy Exchange & Customer-Friendly Policy  
+  </p>
+  <h3 style="margin-top: 20px; color:#222;">“Happy Customers ही हमारी असली पहचान हैं।”</h3>
+</section>
+  <section class="thankyou-section">
+  <div class="thankyou-card">
+    <h2>🌸 Thank You for Visiting 🌸</h2>
+    <p>
+      <strong>Mahendra Cloth House</strong> पर आने और हमें अपना समय देने के लिए दिल से धन्यवाद।  
+      आपका भरोसा ही हमारी असली ताकत है।  
+      <br><br>
+      We always try to bring you the <strong>best fashion, quality fabrics & latest styles</strong> –  
+      because your happiness is our priority.  
+    </p>
+    <button id="backToTop">❤️ Shop With Us Again</button>
+  </div>
+</section>
+
+ <script>
+    
+  const searchBox = document.querySelector(".search-box");
+  const searchOverlay = document.getElementById("searchOverlay");
+  const overlaySearch = document.getElementById("overlaySearch");
+
+  searchBox.addEventListener("click", () => {
+    searchOverlay.classList.add("active");
+    overlaySearch.focus();
+
+    // History में नया state डालो ताकि back press काम करे
+    history.pushState({ search: true }, "", "#search");
+  });
+
+  window.addEventListener("popstate", () => {
+    if (searchOverlay.classList.contains("active")) {
+      searchOverlay.classList.remove("active");
+    }
+  });
+  document.getElementById("backToTop").addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  const images = [
+    "file-20240308-20-2hk7h6.jpg",
+    "fashion-sale-banners_52683-12049.jpg",
+    "2.jpg",
+    "file_00000000372461fd90ae8be05d16c615.png",
+    "file_00000000cbc0622faf1c9b6481d87a1f.png",
+    "style-jaipur-banner-12-march-mobile-view-1.png"
+  ];
+
+  const slidesEl = document.getElementById("slides");
+  images.forEach(src=>{
+    const s = document.createElement("div");
+    s.className="slide";
+    s.innerHTML=`<img src="${src}" alt="">`;
+    slidesEl.appendChild(s);
+  });
+
+  let current = 0;
+  const total = images.length;
+
+  function update(){
+    slidesEl.style.transform = `translateX(-${current*100}%)`;
+  }
+
+  function next(){
+    current = (current+1)%total;
+    update();
+  }
+  function prev(){
+    current = (current-1+total)%total;
+    update();
+  }
+
+  document.getElementById("next").addEventListener("click",next);
+  document.getElementById("prev").addEventListener("click",prev);
+
+  setInterval(next,3000);
+
+  update();
+  
+ const menuIcon = document.querySelector(".title img");
+  const menuPanel = document.getElementById("menuPanel");
+
+  menuIcon.addEventListener("click", (e) => {
+    e.stopPropagation();
+    menuPanel.classList.toggle("active");
+  });
+
+  document.addEventListener("click", (e) => {
+    if (menuPanel.classList.contains("active") && !menuPanel.contains(e.target) && e.target !== menuIcon) {
+      menuPanel.classList.remove("active");
+    }
+  });
+
+const products = [
+  {
+    imgSrc: "Pic1.jpg",
+    productName: "Girl's Sarara Shut",
+    price: "Price : ₹449",
+    category: "kids",
+    sizes: ["7Y", "8Y", "9Y", "10Y", "11Y"],   // 👈 Sizes added
+    tags: ["Girls cloth", "sarara", "lacha", "Nayra shut", "Girls fashion cloth", "Salvar jampal", "Firak shut"]
+  },
+  {
+    imgSrc: "Pic2.jpg",
+    productName: "Baby Summer Dress",
+    price: "Price : ₹199",
+    category: "kids",
+    sizes: ["1 M", "2 M", "5 M", "1Y"],   // 👈 Women dress sizes
+    tags: ["dress", "Baby cloth", "bay shut", "summer", "Top", " baby party dress", "cotton dress", "haaf shut", "baby fashion", "1 month se 1 year cloth girl"]
+  },
+  {
+    imgSrc: "Pic3.jpg",
+    productName: "Boys fashion cloth",
+    price: "Price : ₹199",
+    category: "kids",
+    sizes: ["1 M", "2 M", "5 M", "1Y", "2Y"],   // 👈 Jackets usually start from M
+    tags: ["boys cloth", "men", "Boy", "denim", "Kids cloth", "kot", "fashion clothj for Boys", "T-shir sardri boy cloth"]
+  },
+  {
+    imgSrc: "Pic4.jpg",
+    productName: "Kids' Boby cloth",
+    price: "Price : ₹199",
+    category: "kids",
+    sizes: ["1M", "5M", "1Y", "2Y"],   // 👈 Kids sizes
+    tags: ["Top shut girls", "kids", "Lehnga top", "Skart top", "Baby cloth", "summer wear"]
+  },
+  {
+    imgSrc: "Pic5.jpg",
+   productName: "Kids' Boby cloth",
+    price: "Price : ₹199",
+    category: "kids",
+    sizes: ["1M", "5M", "1Y", "2Y"],   // 👈 Kids sizes
+    tags: ["Top shut girls", "kids", "Lehnga top", "Skart top", "Baby cloth", "summer wear"]
+  },
+  {
+    imgSrc: "Pic6.jpg",
+    productName: "Girls party wear skirt top",
+    price: "Price : ₹349",
+    category: "kids",
+    sizes: ["4Y", "5Y", "6Y", "7Y", "8Y"],   // 👈 Saree usually free size
+    tags: ["Skirt Top for Girls",
+
+"Skirt Top for Women",
+
+"Party Wear Skirt Top",
+
+"Casual Skirt Top Set",
+
+"Kids Skirt Top Dress",
+
+"Stylish Skirt Top Combo",
+
+"Western Skirt and Top",
+
+"Skirt Top for Teenagers",
+
+"Summer Skirt Top Collection",
+
+"Designer Skirt and Top Outfit",
+
+"Cotton Skirt Top Set"]
+  },
+  {
+    imgSrc: "Pic7.jpg",
+    productName: "Men's Shirt",
+    price: "Price : ₹299",
+    category: "men",
+    sizes: ["M", "L", "XL"],   // 👈 Kurta sizes
+    tags: ["shirt", "casual wear", "formal wear", "men", "women", "office wear", "stylish", "trendy", "cotton shirt", "printed shirt"]
+  },
+  {
+    imgSrc: "Pic8.jpg",
+      productName: "Men's Shirt",
+    price: "Price : ₹299",
+    category: "men",
+    sizes: ["M", "L", "XL"],   // 👈 Kurta sizes
+    tags: ["shirt", "casual wear", "formal wear", "men", "women", "office wear", "stylish", "trendy", "cotton shirt", "printed shirt"]
+  },
+    {
+    imgSrc: "Pic10.jpg",
+      productName: "Girl's jeens top",
+    price: "Price : ₹599",
+    category: "kids",
+    sizes: ["10Y", "11Y", "12Y","13Y"],   // 👈 Kurta sizes
+    tags: [
+  "girls jeans top",
+  "kids fashion",
+  "12 years girls clothing",
+  "denim top",
+  "casual wear",
+  "trendy outfit",
+  "stylish jeans top",
+  "kids western wear",
+  "daily wear top",
+  "comfortable kids wear"
+]
+},
+    {
+    imgSrc: "Pic12.jpg",
+      productName: "baby fashion Dress",
+    price: "Price : ₹249",
+    category: "kids",
+    sizes: ["1M", "2M", "5M", "8M", "1Y"],   // 👈 Kurta sizes
+       tags: [
+  "baby girls fancy dress",
+  "kids party wear",
+  "birthday dress",
+  "baby frock",
+  "girls fashion",
+  "stylish baby wear",
+  "ethnic kids dress",
+  "wedding wear kids",
+  "princess dress",
+  "baby girl outfit"
+]
+  },
+    {
+    imgSrc: "Pic9.jpg",
+      productName: "Men's Shirt",
+    price: "Price : ₹299",
+    category: "men",
+    sizes: ["M", "L", "XL"],   // 👈 Kurta sizes
+ 
+tags: ["shirt", "casual wear", "formal wear", "men", "women", "office wear", "stylish", "trendy", "cotton shirt", "printed shirt"]
+  },
+    {
+    imgSrc: "Pic14.png",
+      productName: "baby fashion Dress",
+    price: "Price : ₹199",
+    category: "kids",
+    sizes: ["1M", "2M", "5M", "8M", "1Y"],   // 👈 Kurta sizes
+       tags: [
+  "baby girls fancy dress",
+  "kids party wear",
+  "birthday dress",
+  "baby frock",
+  "girls fashion",
+  "stylish baby wear",
+  "ethnic kids dress",
+  "wedding wear kids",
+  "princess dress",
+  "baby girl outfit"
+]
+  },
+    {
+    imgSrc: "Pic15.png",
+       productName: "baby fashion Dress",
+    price: "Price : ₹249",
+    category: "kids",
+    sizes: ["1M", "2M", "5M", "8M", "1Y"],   // 👈 Kurta sizes
+  tags: [
+  "baby boy fancy dress",
+  "kids party wear",
+  "birthday outfit",
+  "baby boy clothing",
+  "stylish baby wear",
+  "kids western wear",
+  "wedding outfit baby boy",
+  "traditional kids wear",
+  "festive wear",
+  "baby boy fashion"
+]
+  },
+    {
+    imgSrc: "Pic16.png",
+       productName: "baby fashion Dress",
+    price: "Price : ₹199",
+    category: "kids",
+    sizes: ["1M", "2M", "5M", "8M", "1Y"],   // 👈 Kurta sizes
+  tags: [
+  "baby boy fancy dress",
+  "kids party wear",
+  "birthday outfit",
+  "baby boy clothing",
+  "stylish baby wear",
+  "kids western wear",
+  "wedding outfit baby boy",
+  "traditional kids wear",
+  "festive wear",
+  "baby boy fashion"
+]
+  },
+    {
+    imgSrc: "Pic17.jpg",
+      productName: "baby fashion Dress",
+    price: "Price : ₹199",
+    category: "kids",
+    sizes: ["1M", "2M", "5M", "8M", "1Y"],   // 👈 Kurta sizes
+  tags: [
+  "baby boy summer dress",
+  "kids summer wear",
+  "baby casual wear",
+  "lightweight kids dress",
+  "comfortable summer outfit",
+  "baby boy clothing",
+  "cotton kids wear",
+  "daily wear dress",
+  "trendy baby boy outfit",
+  "summer fashion kids"
+]
+  },
+    {
+    imgSrc: "Pic20.jpg",
+      productName: "Men's Blue Jeans",
+    price: "Price : ₹649",
+    category: "men",
+    sizes: ["28", "30", "32", "34"],   // 👈 Kurta sizes
+   tags: [
+  "men jeans",
+  "men denim",
+  "slim fit jeans men",
+  "regular fit jeans men",
+  "trendy men jeans",
+  "casual wear men",
+  "stylish men denim",
+  "men fashion wear",
+  "ripped jeans men",
+  "daily wear jeans men"
+]
+  },
+    {
+    imgSrc: "Pic21.jpg",
+      productName: "Men's Jeans",
+    price: "Price : ₹549",
+    category: "men",
+    sizes: ["28", "30", "32", "34"],   // 👈 Kurta sizes
+   tags: [
+  "men jeans",
+  "men denim",
+  "slim fit jeans men",
+  "regular fit jeans men",
+  "trendy men jeans",
+  "casual wear men",
+  "stylish men denim",
+  "men fashion wear",
+  "ripped jeans men",
+  "daily wear jeans men"
+]
+  },
+    {
+    imgSrc: "Pic22.jpg",
+       productName: "Men's Light Gray jeans",
+    price: "Price : ₹749",
+    category: "men",
+    sizes: ["28", "30", "32", "34"],   // 👈 Kurta sizes
+   tags: [
+  "men jeans",
+  "men denim",
+  "slim fit jeans men",
+  "regular fit jeans men",
+  "trendy men jeans",
+  "casual wear men",
+  "stylish men denim",
+  "men fashion wear",
+  "ripped jeans men",
+  "daily wear jeans men"
+]
+  },
+    {
+    imgSrc: "Pic23.jpg",
+      productName: "Men's Black jeans",
+    price: "Price : ₹549",
+    category: "men",
+    sizes: ["28", "30", "32", "34"],   // 👈 Kurta sizes
+   tags: [
+  "men jeans",
+  "men denim",
+  "slim fit jeans men",
+  "regular fit jeans men",
+  "trendy men jeans",
+  "casual wear men",
+  "stylish men denim",
+  "men fashion wear",
+  "ripped jeans men",
+  "daily wear jeans men"
+]
+  },
+    {
+    imgSrc: "Pic18.jpg",
+      productName: "baby fashion Dress",
+    price: "Price : ₹199",
+    category: "kids",
+    sizes: ["1M", "2M", "5M", "8M", "1Y"],   // 👈 Kurta sizes
+  tags: [
+  "baby boy summer dress",
+  "kids summer wear",
+  "baby casual wear",
+  "lightweight kids dress",
+  "comfortable summer outfit",
+  "baby boy clothing",
+  "cotton kids wear",
+  "daily wear dress",
+  "trendy baby boy outfit",
+  "summer fashion kids"
+]
+  }
+
+  
+];
+
+localStorage.setItem("products", JSON.stringify(products));
+
+const galleryContainer = document.getElementById("galleryContainer");
+
+let favourites = JSON.parse(localStorage.getItem("favourites")) || [];
+function renderGalleryImages(filteredProducts = products) {
+  const gallery = document.getElementById('galleryContainer');
+  gallery.innerHTML = "";
+
+  filteredProducts.forEach(product => {
+    const imgDiv = document.createElement('div');
+    imgDiv.className = 'img1';
+
+    // ❤️ Favourite button
+    const favBtn = document.createElement('span');
+    favBtn.className = 'fav-btn';
+    favBtn.innerHTML = '♡';
+    favBtn.addEventListener('click', () => toggleFavourite(product, favBtn));
+
+    // 🖼 Product Image
+    const img = document.createElement('img');
+    img.src = product.imgSrc;
+    img.alt = product.productName;
+    img.addEventListener('click', () => openImagePage(product)); // ✅ FIX
+
+    // 📛 Product Name
+    const nameElement = document.createElement('div');
+    nameElement.className = 'product-name';
+    nameElement.textContent = product.productName;
+
+    // 💰 Product Price
+    const priceElement = document.createElement('div');
+    priceElement.className = 'product-price';
+    priceElement.textContent = product.price;
+
+    // 🎯 Sizes (radio button style)
+    let sizeContainer;
+    if (product.sizes && product.sizes.length > 0) {
+      sizeContainer = document.createElement('div');
+      sizeContainer.className = 'size-container';
+
+      product.sizes.forEach((size, idx) => {
+        const label = document.createElement('label');
+        label.className = 'size-option';
+
+        const input = document.createElement('input');
+        input.type = 'radio';
+        input.name = `size-${product.productName}`;
+        input.value = size;
+        if (idx === 0) input.checked = true; // ✅ पहला default select
+
+        const span = document.createElement('span');
+        span.textContent = size;
+
+        label.appendChild(input);
+        label.appendChild(span);
+        sizeContainer.appendChild(label);
+      });
+    }
+
+    // 🛒 Buy Now
+    const buyBtn = document.createElement('div');
+    buyBtn.className = 'buy-now';
+    buyBtn.textContent = 'Buy Now';
+    
+    
+    
+    
+    buyBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+
+    // Selected size ले लो
+    const selectedSize = imgDiv.querySelector(".size-option input:checked")?.value || "";
+
+    // Quantity (default 1, या अगर quantity input है तो वहाँ से लो)
+    const qty = 1;
+
+    // Product object बनाओ
+    const selectedProduct = {
+        imgSrc: product.imgSrc,
+        productName: product.productName,
+        price: product.price,
+        sizes: product.sizes || [],
+        selectedSize: selectedSize,
+        quantity: qty
+    };
+
+    // localStorage में save करो
+    localStorage.setItem("selectedProduct", JSON.stringify(selectedProduct));
+
+    // Buy-now.html खोलो
+    window.location.href = "Buy-now.html";
+});
+    
+    
+    
+    
+    
+    
+    
+    
+
+    // सबको जोड़ो (order important है)
+    imgDiv.appendChild(favBtn);
+    imgDiv.appendChild(img);
+    imgDiv.appendChild(nameElement);
+    imgDiv.appendChild(priceElement);
+    if (sizeContainer) imgDiv.appendChild(sizeContainer); // ✅ अब price के नीचे sizes
+    imgDiv.appendChild(buyBtn);
+
+    gallery.appendChild(imgDiv);
+  });
+
+  updateFavUI();
+}
+
+function toggleFavourite(product, favBtn) {
+    const isFavourite = favourites.some(fav => fav.imgSrc === product.imgSrc);
+    if(isFavourite) {
+        favourites = favourites.filter(fav => fav.imgSrc !== product.imgSrc);
+    } else {
+        favourites.push(product);
+    }
+    localStorage.setItem("favourites", JSON.stringify(favourites));
+    updateFavBtn(product.imgSrc, favBtn);
+}
+
+function updateFavBtn(imgSrc, favBtn) {
+    // अब favourites array में ऑब्जेक्ट्स हैं, सिर्फ URL नहीं
+    const isFavourite = favourites.some(fav => fav.imgSrc === imgSrc);
+    if(isFavourite) {
+        favBtn.classList.add("active");
+        favBtn.textContent = "♥";
+    } else {
+        favBtn.classList.remove("active");
+        favBtn.textContent = "♡";
+    }
+}
+
+function updateFavUI() {
+    document.querySelectorAll(".img1").forEach(div => {
+        const img = div.querySelector("img");
+        const favBtn = div.querySelector(".fav-btn");
+        if(!favBtn || !img) return;
+        updateFavBtn(img.src, favBtn);
+    });
+}
+
+function openImagePage(product) {
+  const newWin = window.open("", "_blank");
+  newWin.document.title = product.productName || "Image View";
+
+  // embed only two JSON blobs: initial product and all products
+  const initialProductJSON = JSON.stringify(product);
+  const allProductsJSON = JSON.stringify(products);
+
+  newWin.document.write(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <title>Product View</title>
+     <style>
+     
+     nav {
+  background: #0d3970fe;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 500;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul li {
+  flex: 1;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  white-space: nowrap;
+  min-width: 50px;
+  height: 30px;
+  line-height: 30px;
+  box-shadow: 0 0 5px white;
+}
+
+nav ul li:hover {
+  background: #2dbaabfe;
+  color: yellow;
+}
+
+@media (max-width: 600px) {
+  nav ul li {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+nav ul li ul {
+  display: none;
+  position: absolute;
+  background: #0d3970fe;
+  margin-top: 10px;
+  padding: 0;
+  list-style: none;
+  min-width: 120px;
+  box-shadow: 0 0 5px black;
+  z-index: 100;
+  text-align: center;
+}
+
+nav ul li ul li {
+  padding: 10px;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  box-shadow: none;
+  font-size: 18px;
+}
+
+nav ul li:hover > ul {
+  display: block;
+}
+
+nav ul li ul li:hover {
+  background: #2dbaabfe;
+  color: yellow;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+nav ul li a:hover {
+  color: yellow;
+}
+     
+     
+     
+     
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f0f0f0;
+  color: #222;
+}
+
+.main-img {
+  width: 90%;
+  height: auto;   /* fixed height */
+  
+  border-radius: 5px;
+  display: block;
+}
+
+/* Product info section */
+.product-info {
+  text-align: center;
+  padding: 15px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+.product-name-heading {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 8px;
+}
+.product-price {
+  margin: 6px 0;
+  font-size: 16px;
+  color: green;
+  font-weight: 600;
+}
+
+
+.size-container {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+/* circular radio style */
+.size-option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #e6f6f3;
+  border: 2px solid #cfeee6;
+  cursor: pointer;
+  transition: 0.15s;
+  user-select: none;
+}
+
+.size-option span {
+  display: flex;                /* ✅ flex lagao */
+  align-items: center;          /* ✅ vertical center */
+  justify-content: center;      /* ✅ horizontal center */
+  width: 100%;                  /* ✅ parent ke andar full */
+  height: 100%;
+  font-weight: 700;
+  color: #0d3970fe;
+  border-radius: 50%;
+}
+
+.size-option input {
+  display: none;
+}
+
+/* selected state */
+.size-option input:checked + span {
+  background: #0d3970fe;
+  color: #fff;
+}
+.size{
+position:absolute;
+display:inline-block;
+margin-left:-45%;
+margin-top:8px;
+font-size:20px;
+}
+/* Buy button */
+.buy-now-main {
+  margin-top: 10px;
+  background: #0d3970fe;
+  width:90%;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Related images (thumbnails) */
+.thumbnails-container {
+  display: grid;
+  gap: 3px;
+  padding: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  background: transparent;
+}
+.thumbnail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #dcdcdc;   /* light gray */
+  border-radius: 6px;
+  padding: 6px;
+  border: 2px solid #fff;
+
+}
+.thumbnail img {
+  width: 100%;
+  height: 350px;   /* fixed height */
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+}
+.thumbnail-name {
+  color: black;
+  margin-top: 8px;
+  font-size: 14px;
+  text-align: center;
+  font-weight:bold;
+}
+
+     .main-img-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  object-fit: cover;
+  justify-content: center;
+  align-items: center;
+  background: #000;
+  border-bottom: 2px solid #ccc;
+  position: relative;   /* ✅ button ko container ke andar position karne ke liye */
+}
+
+.fav-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #b4b3b7;
+  border: 1px solid black;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding:  7px;
+  border-radius: 50%;
+  cursor: pointer;
+  
+}
+h5{
+  text-align:center;
+  color:gray;
+}
+
+
+     </style>
+    </head>
+    <body>
+    
+    
+    <nav>
+  <ul>
+    <li class="home">Home</li>
+    <li><a href="My-order.html">My Order</a></li>
+    <li>Category ⬇
+    <ul>
+      <li><a href="Men.html">Man</a></li>
+      <li><a href="Women.html">Women</a></li>
+      <li><a href="Kids.html">Kids</a></li>
+      
+      
+    </ul>
+    </li>
+   
+    <li> <a href="Favourite.html">Favourites</a></li>
+    
+  </ul>
+</nav>  
+    
+    
+
+
+      
+
+
+<div class="main-img-container">
+  <img id="mainImage" class="main-img" src="" alt="product image">
+  <button id="favBtn" class="fav-btn">❤️ Favourite</button>
+</div>
+
+
+
+
+
+
+      <div class="product-info">
+        <div id="mainProductName" class="product-name-heading"></div>
+        <div id="mainProductPrice" class="product-price"></div>
+       <div class="size"> Size</div>
+        <div id="mainProductSizes" class="size-container"></div>
+        <div style="margin-top:10px;"><button id="buyMainBtn" class="buy-now-main">Buy Now</button></div>
+      </div>
+
+      <div id="thumbnails" class="thumbnails-container"></div>
+<h5>No more</h5>
+      <script>
+        // parse embedded JSON safely
+        const initialProduct = ${initialProductJSON};
+        const allProducts = ${allProductsJSON};
+
+        // helpers to safely set text and attributes
+        const mainImg = document.getElementById('mainImage');
+        const mainName = document.getElementById('mainProductName');
+        const mainPrice = document.getElementById('mainProductPrice');
+        const mainSizes = document.getElementById('mainProductSizes');
+        const thumbContainer = document.getElementById('thumbnails');
+
+        function renderMain(product) {
+          mainImg.src = product.imgSrc;
+          mainImg.alt = product.productName || 'Product';
+          mainName.textContent = product.productName || '';
+          mainPrice.textContent = (product.price !== undefined) ? product.price : '';
+
+          // build size radios (unique name per product to avoid collisions)
+          const safeName = 'size_' + btoa(product.productName || String(Math.random())).replace(/=/g,'');
+          mainSizes.innerHTML = ''; // clear
+
+          if (Array.isArray(product.sizes) && product.sizes.length) {
+            product.sizes.forEach((sz, idx) => {
+              const label = document.createElement('label');
+              label.className = 'size-option';
+
+              const input = document.createElement('input');
+              input.type = 'radio';
+              input.name = safeName;
+              input.value = sz;
+              if (idx === 0) input.checked = true;
+
+              const span = document.createElement('span');
+              span.textContent = sz;
+
+              // put input then span so CSS input:checked + span works if needed
+              label.appendChild(input);
+              label.appendChild(span);
+
+              // clicking label toggles radio automatically
+              mainSizes.appendChild(label);
+            });
+          } else {
+            mainSizes.textContent = ''; // no sizes
+          }
+        }
+
+        function renderThumbnails(currentProduct) {
+          thumbContainer.innerHTML = '';
+          // choose up to 4 others (excluding current), randomize
+          const others = allProducts.filter(p => p.imgSrc !== currentProduct.imgSrc);
+          // shuffle
+          for (let i = others.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [others[i], others[j]] = [others[j], others[i]];
+          }
+          const slice = others.slice(0, 4);
+
+          slice.forEach(prod => {
+            const box = document.createElement('div');
+            box.className = 'thumbnail';
+
+            const img = document.createElement('img');
+            img.src = prod.imgSrc;
+            img.alt = prod.productName || 'thumb';
+
+            const nameDiv = document.createElement('div');
+            nameDiv.className = 'thumbnail-name';
+            nameDiv.textContent = prod.productName || '';
+
+            img.addEventListener('click', () => {
+              // update main area with this product
+              renderMain(prod);
+              // re-render thumbnails around the newly selected product
+              renderThumbnails(prod);
+              window.scrollTo({top:0});
+            });
+
+            box.appendChild(img);
+            box.appendChild(nameDiv);
+            thumbContainer.appendChild(box);
+          });
+        }
+        
+        
+        document.getElementById("buyMainBtn").addEventListener("click", () => {
+  // Selected size
+  const selectedSize = Array.from(document.querySelectorAll('.size-option input'))
+    .find(input => input.checked)?.value || "";
+
+  // Quantity default 1 (अगर quantity feature add करना है तो यहाँ input ले सकते हो)
+  const qty = 1;
+
+  // Product data बनाओ
+  const product = {
+    imgSrc: document.getElementById("mainImage").src,
+    productName: document.getElementById("mainProductName").textContent || "Product",
+    price: document.getElementById("mainProductPrice").textContent || "₹0",
+    sizes: Array.from(document.querySelectorAll(".size-option span")).map(s => s.textContent),
+    selectedSize: selectedSize,
+    quantity: qty
+  };
+
+  // Save in localStorage
+  localStorage.setItem("selectedProduct", JSON.stringify(product));
+
+  // Open Buy-now.html
+  window.location.href = "Buy-now.html";
+});
+
+       
+        // initial render
+        renderMain(initialProduct);
+        renderThumbnails(initialProduct);
+
+        // ensure images load errors show (debug)
+        mainImg.addEventListener('error', () => { mainImg.style.opacity = '0.6'; console.warn('Main image failed to load:', mainImg.src); });
+        
+        
+        
+        
+        
+        
+        
+        
+        
+  const favBtn = document.getElementById('favBtn');
+
+  // ✅ Favourite state check/update
+  function updateFavBtnState() {
+    let favs = JSON.parse(localStorage.getItem('favourites') || "[]");
+    const alreadyFav = favs.some(p => p.imgSrc === mainImg.src);
+    favBtn.textContent = alreadyFav ? "❤️" : "🤍"; // Red = added, White = not
+  }
+
+  favBtn.addEventListener('click', () => {
+    let favs = JSON.parse(localStorage.getItem('favourites') || "[]");
+
+    const product = {
+      productName: mainName.textContent,
+      price: mainPrice.textContent,
+      imgSrc: mainImg.src,
+      sizes: [] // sizes optional डाल सकते हैं
+    };
+
+    const index = favs.findIndex(p => p.imgSrc === product.imgSrc);
+
+    if (index === -1) {
+      // ✅ Add to favourites
+      favs.push(product);
+    } else {
+      // ✅ Remove from favourites
+      favs.splice(index, 1);
+    }
+
+    localStorage.setItem('favourites', JSON.stringify(favs));
+    updateFavBtnState(); // हर toggle के बाद update
+  });
+
+  // ✅ जब भी main product बदले तो favourite state refresh करो
+  mainImg.addEventListener("load", updateFavBtnState);
+
+  // ✅ पेज खुलते ही सही heart दिखे
+  updateFavBtnState();
+
+        
+        
+        
+        
+        
+
+
+      <\/script>
+    </body>
+    </html>
+  `);
+
+  newWin.document.close();
+}
+
+renderGalleryImages();
+</script>
+<script src="Index-script.js"></script>
+</body>
+</html>
